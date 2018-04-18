@@ -1,0 +1,47 @@
+.intro {
+  max-width: $container-full-px;
+  width: 100%;
+  margin: 0px auto;
+  padding: 0 0 1px 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  &__title {
+    display: inline-block;
+    font-size: rem(50px);
+    font-weight: bold;
+    color: $white;
+    margin: 0;
+    padding: 30px 90px;
+    background: $primary;
+    position: relative;
+    margin-bottom: 135px;
+    &:after {
+      position: absolute;
+      display: block;
+      content: "";
+      width: 135px;
+      height: 100%;
+      background: $primary;
+      bottom: -100%;
+      left: 0;
+    }
+  }
+  &__content {
+    max-width: 925px;
+    padding: 0 15px;
+    font-size: rem(24px);
+    font-weight: 600;
+    line-height: 1.17;
+    text-align: center;
+    color: $white;
+    margin: 0 auto 124px auto;
+    strong {
+      color: $primary;
+      font-weight: 600;
+    }
+    p {
+      margin-bottom: rem(40px);
+    }
+  }
+}

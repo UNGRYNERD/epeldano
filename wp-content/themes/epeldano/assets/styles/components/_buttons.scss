@@ -1,0 +1,17 @@
+.button {
+  font-size: rem(20px);
+  line-height: 0.65;
+  letter-spacing: -0.3px;
+  text-align: left;
+  color: $white;
+  background-color: $primary;
+  padding: 18px 20px;
+  border: 2px solid $primary;
+  display: inline-block;
+  transition: $transition-standard;
+  &:hover {
+    background-color: $white;
+    color: $primary;
+    text-decoration: none;
+  }
+}

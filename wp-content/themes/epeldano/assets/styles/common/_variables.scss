@@ -1,3 +1,17 @@
 // Grid settings
-$main-sm-columns:       12;
-$sidebar-sm-columns:    4;
+$lg: 1200px;
+$md: 1024px;
+$sm: 768px;
+$xs: 450px;
+
+$container-px: 1250px;
+$container-full-px: 1440px;
+
+$transition-standard: all 0.2s ease-in-out;
+
+
+/* Color palette */
+
+$black: #000000;
+$primary: #0551d8;
+$white: #ffffff;
