@@ -1,0 +1,11 @@
+{
+  "name": "ungrynerd",
+  "homepage": "http://ungrynerd.com/",
+  "authors": [
+    "Daniel Aguilar (ungrynerd.com)"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {},
+  "overrides": {}
+}
