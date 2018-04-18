@@ -8,7 +8,20 @@
   "private": true,
   "dependencies": {
     "owl.carousel": "^2.3.3",
-    "normalize-css": "^7.0.0"
+    "normalize-css": "^7.0.0",
+    "waypoints": "^4.0.1",
+    "jquery.counterup": "^2.1.0"
   },
-  "overrides": {}
+  "overrides": {
+    "waypoints": {
+      "main": [
+        "./lib/jquery.waypoints.js"
+      ]
+    },
+    "jquery.counterup": {
+      "main": [
+        "jquery.counterup.js"
+      ]
+    }
+  }
 }

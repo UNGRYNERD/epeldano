@@ -1,0 +1,18 @@
+.counter {
+  &__title {
+    border-top: 2px solid $primary;
+    font-size: 17px;
+    text-align: left;
+    color: $primary;
+    padding-top: 7px;
+    margin: 0;
+  }
+  &__number {
+    font-size: 100px;
+    font-weight: 800;
+    text-align: left;
+    color: $primary;
+    margin: 0;
+    line-height: 1;
+  }
+}
