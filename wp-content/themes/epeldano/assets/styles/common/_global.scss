@@ -6,16 +6,11 @@
           box-sizing: border-box;
 }
 
-body, input, textarea {
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    -moz-osx-font-smoothing: grayscale;
-}
 
 body {
   font-family: Montserrat, sans-serif;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 a {

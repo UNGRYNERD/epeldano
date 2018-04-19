@@ -1,0 +1,63 @@
+.app {
+  background: $black;
+  position: relative;
+  &__container {
+    max-width: $container-px;
+    width: 100%;
+    margin: 0px auto 60px auto;
+    padding: 87px 15px 68px 15px;
+    position: relative;
+    z-index: 11;
+  }
+  &__title {
+    font-size: 53px;
+    font-weight: 300;
+    text-align: left;
+    color: $primary;
+  }
+  &__content {
+    font-size: 20px;
+    text-align: left;
+    color: $white;
+    max-width: ($container-px/10)*6.2;
+    margin-bottom: 30px;
+    strong {
+      font-weight: bold;
+      color: $primary;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: ($container-px/10)*6.2;
+  }
+  .counter {
+    flex: 0 0 ($container-px/10)*3;
+    max-width: ($container-px/10)*3;
+    &__title {
+      border-top-color: $white;
+      color: $white;
+    }
+    &__number {
+      color: $white;
+    }
+  }
+  &__downloads {
+    a {
+      display: block;
+      margin-bottom: 20px;
+      &:last-of-type {
+        margin: 0;
+      }
+    }
+  }
+  &__image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-height: 100%;
+    width: auto;
+    z-index: 10;
+  }
+}

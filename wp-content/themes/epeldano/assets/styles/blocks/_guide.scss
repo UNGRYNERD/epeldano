@@ -1,0 +1,49 @@
+.guide {
+  background: $primary;
+  position: relative;
+  &:after {
+    position: absolute;
+    content: "";
+    width: 290px;
+    height: 290px;
+    background-color: $primary;
+    bottom: -290px;
+    right: 0;
+    z-index: 9;
+  }
+  &__wrapper {
+    max-width: $container-px;
+    width: 100%;
+    margin: 0px auto 0px auto;
+    padding: 68px 15px 68px 15px;
+    display: flex;
+    flex-flow: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__image {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+  &__content {
+    flex: 1 1 50%;
+    max-width: 50%;
+    font-size: 20px;
+    text-align: left;
+    color: $white;
+    strong {
+      font-weight: bold;
+      color: $black;
+    }
+    p {
+      padding-right: 120px;
+    }
+  }
+  &__title {
+    font-size: 53px;
+    font-weight: 300;
+    text-align: left;
+    color: $black;
+    margin: 0 0 50px 0;
+  }
+}
