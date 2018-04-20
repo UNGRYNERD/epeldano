@@ -31,6 +31,7 @@ function setup() {
   add_theme_support('post-thumbnails');
   add_image_size('ungrynerd_big', 2000, 2000, false);
   add_image_size('ungrynerd_medium', 800, 800, false);
+  add_image_size('ungrynerd_small', 400, 400, false);
   // Enable post formats
   // http://codex.wordpress.org/Post_Formats
   add_theme_support('post-formats', ['aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio']);

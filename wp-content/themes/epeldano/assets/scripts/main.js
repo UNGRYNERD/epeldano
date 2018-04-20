@@ -14,6 +14,15 @@
   var Peldano = {
     setupCounters: function () {
       $('.counter__number').counterUp();
+    },
+    setupSlideshow: function () {
+      if (!$('.slide__content').length) { return false; }
+      $('.slide__content').owlCarousel({
+        items: 1,
+        nav: true,
+        dots: true,
+        loop: true
+      });
     }
   };
   // Use this variable to set up the common and page specific functions. If you
@@ -24,6 +33,7 @@
       init: function() {
         // JavaScript to be fired on all pages
         Peldano.setupCounters();
+        Peldano.setupSlideshow();
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
