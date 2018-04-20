@@ -1,0 +1,55 @@
+.footer {
+  background-color: $black;
+  padding: 47px 0 34px 0;
+  color: $white;
+  font-size: 11px;
+  letter-spacing: -0.1px;
+  &__container {
+    display: flex;
+    max-width: $container-px;
+    width: 100%;
+    margin: 0px auto 0px auto;
+    padding: 0px 15px 0px 15px;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  &__logo {
+    display: block;
+    max-width: 137px;
+    margin-right: auto;
+  }
+  &__menu {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    h3 {
+      font-size: 12px;
+      font-weight: bold;
+      margin: 0 0 10px 0;
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    .menu-item {
+      font-size: 12px;
+      flex: 0 0 50%;
+      max-width: 50%;
+      white-space: nowrap;
+      margin-bottom: 5px;
+      a {
+        color: $white;
+      }
+    }
+    &--pub {
+      margin-left: 20%;
+    }
+    &--other {
+      margin-top: 35px;
+      display: block;
+      flex: 0;
+      .menu-item {
+        max-width: 100%;
+      }
+    }
+  }
+}
