@@ -23,6 +23,13 @@
         dots: true,
         loop: true
       });
+    },
+    setupMenu: function () {
+      $('.header__menu-toggle').on('click', function (e) {
+        e.preventDefault();
+        $(this).toggleClass('active');
+        $('.header .menu').toggleClass('active');
+      });
     }
   };
   // Use this variable to set up the common and page specific functions. If you
@@ -34,6 +41,7 @@
         // JavaScript to be fired on all pages
         Peldano.setupCounters();
         Peldano.setupSlideshow();
+        Peldano.setupMenu();
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

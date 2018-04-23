@@ -13,4 +13,9 @@
     endif;
     ?>
   </nav>
+  <a href="#" class="header__menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+  </a>
 </header>

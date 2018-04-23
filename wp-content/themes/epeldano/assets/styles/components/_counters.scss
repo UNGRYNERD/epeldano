@@ -1,4 +1,7 @@
 .counter {
+  @media (max-width: $md) {
+    margin-bottom: 30px;
+  }
   &__title {
     border-top: 2px solid $primary;
     font-size: 17px;
@@ -8,11 +11,14 @@
     margin: 0;
   }
   &__number {
-    font-size: 100px;
+    font-size: rem(100px);
     font-weight: 800;
     text-align: left;
     color: $primary;
     margin: 0;
     line-height: 1;
+    @media (max-width: $md) {
+      font-size: rem(50px);
+    }
   }
 }

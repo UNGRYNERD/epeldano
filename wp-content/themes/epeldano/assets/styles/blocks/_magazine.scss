@@ -3,6 +3,9 @@
   width: 100%;
   margin: 0px auto 60px auto;
   padding: 0 15px 1px 15px;
+  @media (max-width: $md) {
+    margin-bottom: 30px;
+  }
   &__title {
     font-size: 53px;
     line-height: 1.2; 
@@ -10,6 +13,11 @@
     color: $black;
     position: relative;
     margin: 0 0 36px 0;
+    word-break: break-word;
+    @media (max-width: $md) {
+      font-size: rem(25px);
+      margin-bottom: 15px;
+    }
     &:before {
       content: "";
       position: absolute;
@@ -32,6 +40,13 @@
     font-size: 20px;
     text-align: left;
     color: $black;
+    @media (max-width: $md) {
+      font-size: rem(16px);
+    }
+    @media (max-width: $md) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
     strong {
       font-weight: normal;
       color: $primary;
@@ -41,18 +56,30 @@
     margin-top: 58px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     .counter {
       flex: 1 1 calc(50% - 38px);
       padding-right: 20px;
+      @media (max-width: $md) {
+        flex: 0 0 100%;
+        padding: 0;
+      }
       &:last-of-type {
         padding-right: 0;
         padding-left: 20px;
+        @media (max-width: $md) {
+          padding: 0;
+        }
       }
     }
   }
   &__image {
     flex: 0 0 30%;
     max-width: 30%;
+    @media (max-width: $md) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
   }
 }
 
@@ -61,6 +88,9 @@
   width: 100%;
   margin: 0px auto 60px auto;
   padding: 0 15px 1px 15px;
+  @media (max-width: $md) {
+    margin-bottom: 30px;
+  }
   &__title {
     font-size: 53px;
     line-height: 1;
@@ -73,6 +103,12 @@
     width: 80%;
     background: $primary;
     position: relative;
+    word-break: break-word;
+    @media (max-width: $md) {
+      font-size: rem(25px);
+      padding: 15px;
+      width: auto;
+    }
     &:before {
       content: "";
       position: absolute;
@@ -81,6 +117,9 @@
       left: -100%;
       top: 0;
       background: $primary;
+      @media (max-width: $md) {
+        display: none
+      }
     }
   }
   &__wrapper {
@@ -92,9 +131,14 @@
   &__content {
     flex: 0 0 40%;
     max-width: 40%;
-    font-size: 20px;
+    font-size: rem(20px);
     text-align: left;
     color: $black;
+    @media (max-width: $md) {
+      font-size: rem(16px);
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
     strong {
       font-weight: normal;
       color: $primary;
@@ -103,6 +147,10 @@
   &__counters {
     flex: 0 0 30%;
     max-width: 30%;
+    @media (max-width: $md) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
     .counter {
       width: 100%;
       margin-bottom: 15px;
@@ -113,5 +161,11 @@
     max-width: 20%;
     position: relative;
     top: -120px;
+    @media (max-width: $md) {
+      top: 0;
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin-bottom: 30px;
+    }
   }
 }

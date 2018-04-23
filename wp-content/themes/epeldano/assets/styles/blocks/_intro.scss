@@ -6,6 +6,9 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  @media (max-width: $md) {
+    margin-bottom: 30px;
+  }
   &__title {
     display: inline-block;
     font-size: rem(50px);
@@ -16,6 +19,9 @@
     background: $primary;
     position: relative;
     margin-bottom: 135px;
+    @media (max-width: $md) {
+      font-size: rem(25px);
+    }
     &:after {
       position: absolute;
       display: block;
@@ -25,6 +31,9 @@
       background: $primary;
       bottom: -100%;
       left: 0;
+      @media (max-width: $md) {
+        width: 90px;
+      }
     }
   }
   &__content {
@@ -36,6 +45,10 @@
     text-align: center;
     color: $white;
     margin: 0 auto 124px auto;
+    @media (max-width: $md) {
+      font-size: rem(18px);
+      margin-bottom: 30px;
+    }
     strong {
       color: $primary;
       font-weight: 600;
