@@ -28,6 +28,16 @@
         loop: true
       });
     },
+    setupClientsSlide: function () {
+      if (!$('.clients__wrap').length) { return false; }
+      $('.clients__wrap').owlCarousel({
+        items: 6,
+        nav: true,
+        dots: false,
+        loop: true,
+        margin: 34
+      });
+    },
     setupMenu: function () {
       $('.header__menu-toggle').on('click', function (e) {
         e.preventDefault();
@@ -55,6 +65,7 @@
     'home': {
       init: function() {
         // JavaScript to be fired on the home page
+        Peldano.setupClientsSlide();
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS

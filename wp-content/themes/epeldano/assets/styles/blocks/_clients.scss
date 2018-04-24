@@ -1,0 +1,66 @@
+.clients {
+  max-width: $container-px;
+  margin: 100px auto;
+  text-align: center;
+  &__title {
+    font-size: rem(28px);
+    font-weight: bold;
+    line-height: 1.75;
+    color: $black;
+  }
+  &__wrap {
+    overflow: hidden;
+    padding: 50px 100px;
+  }
+  .owl-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 32px;
+    width: 100%;
+    pointer-events: none;
+    transform: translateY(-50%);
+    @media (max-width: $md) {
+      display: none;
+    }
+    span {
+      display: block;
+      width: 40px;
+      height: 40px;
+      text-indent: -99999px;
+      border-right: 2px solid $black;
+      border-bottom: 2px solid $black;
+    }
+    button {
+      pointer-events: all;
+      padding: 0;
+      &.owl-next { 
+        right: 10px;
+        position: absolute;
+        &:hover {
+          span {
+            border-color: $primary;
+          }
+        }
+        span {
+          transform: rotate(-45deg);
+        }
+      }
+      &.owl-prev {
+        left: 10px;
+        position: absolute;
+        &:hover {
+          span {
+            border-color: $primary;
+          }
+        }
+        span {
+          transform: rotate(-225deg);
+        }
+      }
+      &:focus, &:active {
+        outline: none;
+      }
+    }
+  }
+}
