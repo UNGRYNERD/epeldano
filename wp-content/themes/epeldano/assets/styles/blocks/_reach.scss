@@ -1,0 +1,33 @@
+.reach {
+  padding: 120px 15px 60px 15px;
+  text-align: center;
+  @media (max-width: $md) {
+    padding: 30px 15px;
+  }
+  &__text {
+    margin: 0;
+  }
+  &__number {
+    font-size: rem(130px);
+    font-weight: 200;
+    line-height: 1;
+    letter-spacing: -1.3px;
+    color: $primary;
+    margin-bottom: 40px;
+    @media (max-width: $md) {
+      font-size: rem(60px);
+      margin-bottom: 20px;
+    }
+  }
+  &__total {
+    display: block;
+    font-size: rem(28px);
+    font-weight: bold;
+    letter-spacing: -0.3px;
+    color: $black;
+    @media (max-width: $md) {
+      font-size: rem(16px);
+    }
+  }
+  
+}

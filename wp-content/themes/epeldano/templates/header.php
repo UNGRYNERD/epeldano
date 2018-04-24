@@ -1,5 +1,8 @@
 <header class="header">
-  <?php if (has_custom_logo()): ?>
+  <?php $secondary_logo = get_theme_mod('secondary_logo'); ?>
+  <?php if (!empty($secondary_logo) && is_front_page()) : ?>
+    <a href="<?= esc_url(home_url('/')); ?>" class="custom-logo-link"><img src="<?= esc_url($secondary_logo) ?>"></a>
+  <?php elseif (has_custom_logo()): ?>
     <?php the_custom_logo(); ?>
   <?php else: ?>
     <a class="header__site-name" href="<?= esc_url(home_url('/')); ?>">

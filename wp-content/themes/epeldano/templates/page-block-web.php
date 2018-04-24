@@ -7,11 +7,11 @@
       <div class="magazine__counters">
         <div class="counter">
           <h3 class="counter__title"><?php esc_html_e('Visitas al mes', 'ungrynerd'); ?></h3>
-          <span class="counter__number"><?php the_sub_field('visits'); ?></span>
+          <span class="counter__number" data-counter="true"><?php the_sub_field('visits'); ?></span>
         </div>
         <div class="counter">
           <h3 class="counter__title"><?php esc_html_e('Visitantes únicos', 'ungrynerd'); ?></h3>
-          <span class="counter__number"><?php the_sub_field('unique_visits'); ?></span>
+          <span class="counter__number" data-counter="true"><?php the_sub_field('unique_visits'); ?></span>
         </div>
       </div>
     </div>

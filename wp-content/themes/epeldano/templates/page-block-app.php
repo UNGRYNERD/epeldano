@@ -7,7 +7,7 @@
     <div class="app__wrapper">      
       <div class="counter">
         <h3 class="counter__title"><?php esc_html_e('Descargas', 'ungrynerd'); ?></h3>
-        <span class="counter__number"><?php the_sub_field('downloads'); ?></span>
+        <span class="counter__number" data-counter="true"><?php the_sub_field('downloads'); ?></span>
       </div>
       <div class="app__downloads">
         <a href="<?php the_sub_field('android'); ?>" class="button"><?php esc_html_e('> Descargar Android', 'ungrynerd'); ?></a>

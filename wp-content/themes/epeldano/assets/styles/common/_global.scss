@@ -16,6 +16,7 @@ body {
 a {
   color: $primary;
   text-decoration: none;
+  transition: $transition-standard;
   &:hover {
     text-decoration: underline;
   }

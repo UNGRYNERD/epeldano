@@ -13,7 +13,11 @@
 (function($) {
   var Peldano = {
     setupCounters: function () {
-      $('.counter__number').counterUp();
+      $('[data-counter]').counterUp({
+        formatter: function (n) {
+          return n.replace(/,/g, '.');
+        }
+      });
     },
     setupSlideshow: function () {
       if (!$('.slide__content').length) { return false; }
