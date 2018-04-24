@@ -1,0 +1,39 @@
+.latest {
+  background-color: $primary;    
+  text-align: center;
+  padding: 68px 15px;
+  &__title {
+    font-size: rem(28px);
+    font-weight: bold;
+    line-height: 1.75;
+    color: $black;
+    margin: 0;
+  }
+  &__post {
+    font-size: rem(48px);
+    font-weight: bold;
+    line-height: 1.02;
+    text-align: center;
+    a {
+      color: $white;
+      span {
+        color: $black;
+      }
+      &:hover {
+        text-decoration: none;
+        color: $black;
+      }
+    }
+  }
+  &__link {
+    font-size: rem(20px);
+    font-weight: 300;
+    line-height: 0.65;
+    letter-spacing: -0.3px;
+    color: $black;
+    &:hover {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}
