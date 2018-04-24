@@ -163,9 +163,15 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 99;
   .menu-item {
     a {
       color: $white;
+    }
+  }
+  .header__menu-toggle {
+    span {
+      background-color: $white;
     }
   }
 }

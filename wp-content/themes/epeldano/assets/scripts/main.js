@@ -31,11 +31,19 @@
     setupClientsSlide: function () {
       if (!$('.clients__wrap').length) { return false; }
       $('.clients__wrap').owlCarousel({
-        items: 6,
         nav: true,
         dots: false,
         loop: true,
-        margin: 34
+        margin: 34,
+        responsive: {
+          0: {
+            items: 1
+          },
+          992: {
+            items: 6
+          }
+        },
+        
       });
     },
     setupMenu: function () {

@@ -1,6 +1,9 @@
 .home-section {
   background-color: #ddd;
   padding: 140px 15px 60px 15px;
+  @media (max-width: 992px) {
+    padding: 30px 15px;
+  }
   &__wrapper {
     background-size: contain;
     background-position: right bottom;
@@ -17,6 +20,11 @@
     text-align: left;
     color: $black;
     padding-bottom: 250px;
+    @media (max-width: 992px) {
+      font-size: rem(24px);
+      flex: 1;
+      max-width: 100%;
+    }
     span {
       color: $primary;
     }

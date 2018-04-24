@@ -2,18 +2,27 @@
   background-color: $primary;    
   text-align: center;
   padding: 68px 15px;
+  @media (max-width: 992px) {
+    padding: 30px 15px;    
+  }
   &__title {
     font-size: rem(28px);
     font-weight: bold;
     line-height: 1.75;
     color: $black;
     margin: 0;
+    @media (max-width: 992px) {
+      font-size: rem(20px);
+    }
   }
   &__post {
     font-size: rem(48px);
     font-weight: bold;
     line-height: 1.02;
     text-align: center;
+    @media (max-width: 992px) {
+      font-size: rem(28px);
+    }
     a {
       color: $white;
       span {

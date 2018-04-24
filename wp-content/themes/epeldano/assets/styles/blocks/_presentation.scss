@@ -6,7 +6,7 @@
     padding: 30px 15px;
   }
   &__text {
-    font-size: 28px;
+    font-size: rem(28px);
     letter-spacing: -0.3px;
     text-align: center;
     color: $white;
@@ -16,6 +16,9 @@
     span {
       font-weight: bold;
       color: $black;
+    }
+    @media (max-width: 992px) {
+      font-size: rem(20px);
     }
   }
   &:after {
@@ -27,5 +30,10 @@
     bottom: -174px;
     right: 0;
     z-index: 9;
+    @media (max-width: 992px) {
+      width: 50px;
+      height: 50px;
+      bottom: -50px;
+    }
   }
 }

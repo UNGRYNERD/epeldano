@@ -2,9 +2,15 @@
   max-width: $container-full-px;
   margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
   .link {
     flex: 0 0 (100%/3);
+    max-width: (100%/3);
     background: $black;
+    @media (max-width: 992px) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
     span {
       display: block;
       padding: 43px 34px;
