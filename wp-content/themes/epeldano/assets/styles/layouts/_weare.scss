@@ -5,6 +5,11 @@
     font-size: rem(20px);
     line-height: 1.1;
     color: $black;
+    @media (max-width: $md) {
+      margin: 30px auto;
+      font-size: rem(18px);
+      padding: 0 15px;
+    }
     strong {
       font-weight: normal;
       color: $primary;
@@ -16,6 +21,10 @@
       letter-spacing: -0.1px;
       color: $black;
       margin-bottom: 50px;
+      @media (max-width: $md) {
+        font-size: rem(22px);
+        margin-bottom: 15px;
+      }
       strong {
         font-weight: bold;
         color: $primary;
@@ -26,12 +35,24 @@
     background: $primary;
     color: $white;
     padding: 55px 15px;
+    @media (max-width: $md) {
+      padding: 30px 15px;
+    }
     .container {
       max-width: $container-px;
       margin: 0px auto;
     }
     &__title {
-
+      font-size: rem(36px);
+      font-weight: bold;
+      line-height: 1.19;
+      letter-spacing: -0.4px;
+      color: $white;
+      margin: 0 0 30px 0;
+      @media (max-width: $md) {
+        font-size: rem(25px);
+        margin-bottom: 0px;
+      }
     }
     &__wrapper {
       display: flex;
@@ -45,6 +66,9 @@
       letter-spacing: -0.1px;
       color: $white;
       font-weight: normal;
+       @media (max-width: $md) {
+         flex: 0 0 100%;
+       }
       span {
         color: $black;
         font-size: rem(18px);
@@ -73,6 +97,10 @@
       line-height: 1.11;
       text-align: center;
       color: $primary;
+      @media (max-width: $md) {
+        margin: 30px auto;
+        padding: 0px 15px;
+      }
     }
     .members {
       display: flex;
@@ -82,19 +110,27 @@
         flex: 0 0 25%;
         background: $black;
         color: $white;
+        @media (max-width: $md) {
+          flex: 0 0 100%;
+        }
         &:nth-of-type(1),
         &:nth-of-type(2) {
           flex: 0 0 50%;
-          .member__name {
-            display: inline-block;
-            margin-right: 5px;
-            &:after {
-              content: '.';
-            }
+          @media (max-width: $md) {
+            flex: 0 0 100%;
           }
-          .member__position {
-            display: inline-block;
-            margin-left: 0;
+          @media (min-width: $md) {
+            .member__name {
+              display: inline-block;
+              margin-right: 5px;
+              &:after {
+                content: '.';
+              }
+            }
+            .member__position {
+              display: inline-block;
+              margin-left: 0;
+            }
           }
         }
         &:nth-of-type(2n+2) {
@@ -128,6 +164,11 @@
     line-height: 1.11;
     text-align: center;
     color: $black;
+    @media (max-width: $md) {
+      margin: 30px auto;
+      padding: 0 15px;
+      font-size: rem(20px);
+    }
     strong {
       color: $primary;
       font-weight: 600;
