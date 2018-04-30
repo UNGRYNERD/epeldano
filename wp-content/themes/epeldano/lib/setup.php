@@ -36,6 +36,8 @@ function setup() {
   add_image_size('ungrynerd_medium', 800, 800, false);
   add_image_size('ungrynerd_small', 400, 400, false);
   add_image_size('ungrynerd_pagelink', 960, 680, true);
+  add_image_size('ungrynerd_member', 360, 400, true);
+  add_image_size('ungrynerd_member_big', 720, 400, true);
   // Enable post formats
   // http://codex.wordpress.org/Post_Formats
   add_theme_support('post-formats', ['aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio']);

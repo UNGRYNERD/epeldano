@@ -1,4 +1,4 @@
-<?php 
+<?php
  /* Template Name: Página de bloques */
 ?>
 <?php if (have_rows('blocks')) : ?>
