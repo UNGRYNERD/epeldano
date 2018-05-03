@@ -94,6 +94,13 @@ function assets() {
     wp_enqueue_script('comment-reply');
   }
 
-  wp_enqueue_script('ungrynerd/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
+  if (is_page_template('template-contact.php')) {
+    wp_enqueue_script('google-maps', '//maps.google.com/maps/api/js?key=AIzaSyDi3Nfc8OxZr_UE_X-o4RXyruymMY3aV2o&#038;libraries=places&#038;language=es', ['jquery'], null, true);
+  }
+
+  wp_register_script('ungrynerd/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
+  $ungrynerd = array('path' => get_stylesheet_directory_uri());
+  wp_localize_script('ungrynerd/js', 'ungrynerd', $ungrynerd);
+  wp_enqueue_script('ungrynerd/js');
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);

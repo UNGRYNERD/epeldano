@@ -90,3 +90,8 @@ function disable_emojicons_tinymce( $plugins ) {
     return array();
   }
 }
+
+add_action('acf/init', __NAMESPACE__ . '\ungrynerd_acf_init');
+function ungrynerd_acf_init() {
+  acf_update_setting('google_api_key', 'AIzaSyDi3Nfc8OxZr_UE_X-o4RXyruymMY3aV2o');
+}

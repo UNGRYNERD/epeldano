@@ -1,0 +1,319 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce SEPA Payment Gateway\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-16 15:01+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ralf Fuhrmann <admin@specialpress.net>\n"
+"Language-Team: Raúl Alonsdo <ralonso@epeldano.com>\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.7.5\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: sp-wc-gateway-sepa.php:149
+msgid "SEPA"
+msgstr "SEPA"
+
+#: sp-wc-gateway-sepa.php:150
+msgid "Allows payments by SEPA, more commonly known as direct debit."
+msgstr "Permite pago via SEPA, conocido como cargo directo."
+
+#: sp-wc-gateway-sepa.php:230
+msgid "Enable/Disable"
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:232
+msgid "Enable SEPA Payment"
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:234 sp-wc-gateway-sepa.php:589
+msgid "SEPA Payment only works with EUR as currency."
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:237
+msgid "Title"
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:239
+msgid "This controls the title which the user will see during checkout."
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:240
+msgid "SEPA Direct Debit"
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:244
+msgid "Description"
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:246
+msgid "Payment method description that the customer will see on your checkout."
+msgstr "Descripción del método de pago que tu cliente verá en el checkout."
+
+#: sp-wc-gateway-sepa.php:247
+msgid ""
+"We will debit the amount directly from your account via SEPA direct debit. "
+"Your order won't be shipped until the funds have cleared in our account."
+msgstr ""
+"Cargaremos el total del adeudo directamente a su cuenta bancaria via SEPA. "
+"Su pedido no será enviado hasta que el importe se haya recibido en nuestra "
+"cuenta."
+
+#: sp-wc-gateway-sepa.php:251
+msgid "Instructions"
+msgstr "Instrucciones"
+
+#: sp-wc-gateway-sepa.php:253
+msgid "Instructions that will be added to the thank you page and emails."
+msgstr ""
+"Las instrucciones se añadirán a los agradecimientos en tu página y en los e-"
+"mails."
+
+#: sp-wc-gateway-sepa.php:258 sp-wc-gateway-sepa.php:356
+#: sp-wc-gateway-sepa.php:524 sp-wc-gateway-sepa.php:563
+#: sp-wc-gateway-sepa.php:773
+msgid "Account Owner"
+msgstr "Titular de la cuenta"
+
+#: sp-wc-gateway-sepa.php:260
+msgid "The Owner of your bank account."
+msgstr "El titular de tu cuenta bancaria"
+
+#: sp-wc-gateway-sepa.php:265 sp-wc-gateway-sepa.php:357
+#: sp-wc-gateway-sepa.php:528 sp-wc-gateway-sepa.php:564
+#: sp-wc-gateway-sepa.php:784
+msgid "Account IBAN"
+msgstr "IBAN"
+
+#: sp-wc-gateway-sepa.php:267
+msgid "Your IBAN."
+msgstr "Tu IBAN"
+
+#: sp-wc-gateway-sepa.php:272 sp-wc-gateway-sepa.php:358
+#: sp-wc-gateway-sepa.php:532 sp-wc-gateway-sepa.php:565
+#: sp-wc-gateway-sepa.php:795
+msgid "Account BIC"
+msgstr "BIC"
+
+#: sp-wc-gateway-sepa.php:274
+msgid "Your BIC."
+msgstr "Tu BIC"
+
+#: sp-wc-gateway-sepa.php:279
+msgid "Creditor Id"
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:281
+msgid "Your Creditor ID."
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:286
+msgid "Mandate Id"
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:288
+msgid "The default mandate id. This will be extended by the order-id."
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:355 sp-wc-gateway-sepa.php:558
+#: sp-wc-gateway-sepa.php:767
+msgid "SEPA Bank Details"
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:379
+msgid "Awaiting SEPA payment"
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:602
+msgid "Account-Owner must be filled."
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:677
+msgid "Unpayed"
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:751
+msgid "SEPA Create XML"
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:752 sp-wc-gateway-sepa.php:873
+msgid "SEPA Transactions"
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:778
+msgid "Please enter the account owner."
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:789
+msgid "Please enter the IBAN."
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:800
+msgid "Please enter the BIC."
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:883 sp-wc-gateway-sepa.php:938
+msgid "Transaction-ID"
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:884 sp-wc-gateway-sepa.php:939
+msgid "Transaction-Date"
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:885 sp-wc-gateway-sepa.php:940
+msgid "Transaction-Amount"
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:886 sp-wc-gateway-sepa.php:941
+msgid "Transaction-Records"
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:887 sp-wc-gateway-sepa.php:942
+msgid "File-Name-XML"
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:963
+msgid "Create SEPA XML File"
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:973 sp-wc-gateway-sepa.php:1251
+msgid "Order-ID"
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:974 sp-wc-gateway-sepa.php:1252
+msgid "Order-Date"
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:975 sp-wc-gateway-sepa.php:1253
+msgid "Order-Amount"
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:976 sp-wc-gateway-sepa.php:1254
+msgid "IBAN"
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:977 sp-wc-gateway-sepa.php:1255
+msgid "BIC"
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:1151 sp-wc-gateway-sepa.php:1167
+msgid "Your Order"
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:1151 sp-wc-gateway-sepa.php:1167
+msgid "from Date"
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:1216
+msgid "SEPA payment processed"
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:1577
+msgid "IBAN must be filled."
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:1595
+msgid "This is not an IBAN from a SEPA country."
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:1604
+msgid "IBAN has not the right length."
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:1618 sp-wc-gateway-sepa.php:1630
+msgid "IBAN is not valid."
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:1654
+msgid "BIC must be filled."
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:1677
+msgid "BIC has not the right len."
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:1684
+msgid "BIC is not valid."
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:1697
+msgid "This is not a BIC from a SEPA country."
+msgstr ""
+
+#: sp-wc-gateway-sepa.php:1705
+msgid "IBAN and BIC country must be equal."
+msgstr ""
+
+#~ msgid "IBAN does not have the right length."
+#~ msgstr "Die IBAN hat die falsche Länge."
+
+#~ msgid "Account Owner:"
+#~ msgstr "Konto Inhaber:"
+
+#~ msgid "BIC:"
+#~ msgstr "BIC:"
+
+#~ msgid "IBAN:"
+#~ msgstr "IBAN:"
+
+#~ msgid "SEPA Information"
+#~ msgstr "SEPA Informationen"
+
+#~ msgid "SAP User Connect Settings"
+#~ msgstr "SAP User Connect Einstellungen"
+
+#~ msgid "Connect Settings"
+#~ msgstr "Verbindungs Parameter"
+
+#~ msgid "Plugin Settings"
+#~ msgstr "Plugin Einstellungen"
+
+#~ msgid "Only SAP-Users could register"
+#~ msgstr "Nur SAP-Benutzer dürfen sich Registrieren"
+
+#~ msgid "Only SAP-Users could login"
+#~ msgstr "Nur SAP-Benutzer dürfen sich Anmelden"
+
+#~ msgid "Exclude Users"
+#~ msgstr "Benutzer ausschliessen"
+
+#~ msgid ""
+#~ "Add the Usernames that should not be checked against SAP(e.g. the ADMIN). "
+#~ "Seperate the usernames with a comma"
+#~ msgstr ""
+#~ "Tragen Sie hier die Benutzernamen ein, die beim Anmelden NICHT gegen SAP "
+#~ "geprüft werden sollen (z.b. der Wordpress Admin). Bitte trennen Sie die "
+#~ "Benutzernamen mit einem Komma."
+
+#~ msgid "Save Changes"
+#~ msgstr "Änderungen speichern"
+
+#~ msgid "Please Note !<br />Your username will be checked against SAP."
+#~ msgstr "Achtung !<br />Der Benutzername wird gegen SAP geprüft."
+
+#~ msgid ""
+#~ "Username <strong>%s</strong> doesn't exist in SAP. <br />Please use your "
+#~ "SAP Username to Register."
+#~ msgstr ""
+#~ "Benutzername <strong>%s</strong> existiert nicht in SAP. <br />Bitte "
+#~ "verwenden Sie Ihren SAP-Benutzernamen zur Registrierung."
+
+#~ msgid ""
+#~ "Username <strong>%s</strong> doesn't exist in SAP. <br />Please use your "
+#~ "SAP Username to Login."
+#~ msgstr ""
+#~ "Benutzername <strong>%s</strong> existiert nicht in SAP. <br />Bitte "
+#~ "verwenden Sie Ihren SAP-Benutzernamen zur Anmeldung"
+
+#~ msgid "Determine Details for an User"
+#~ msgstr "Zeigt Details zum Benutzer an"
+
+#~ msgid "Not a SAP User"
+#~ msgstr "Kein SAP Benutzer"
