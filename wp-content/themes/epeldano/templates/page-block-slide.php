@@ -5,7 +5,11 @@
       <article class="slide__item">
         <h2 class="slide__item-title"><?php the_sub_field('title') ?></h2>
         <?php the_sub_field('content'); ?>
-        <?= wp_get_attachment_image(get_sub_field('logo'), 'ungrynerd_small', false, array('class' => 'slide__item-logo')) ?>
+        <?php if (get_sub_field('logo')) : ?>
+          <a href="<?php the_sub_field('link'); ?>" class="slide__item-logo">
+            <?= wp_get_attachment_image(get_sub_field('logo'), 'ungrynerd_small', false, array('class' => 'slide__item-logo')) ?>
+          </a>
+        <?php endif; ?>
       </article>
     <?php endwhile; ?>
   </div>

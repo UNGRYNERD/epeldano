@@ -1,4 +1,5 @@
 <?php
+
 if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
@@ -960,6 +961,22 @@ acf_add_local_field_group(array(
 									'max_height' => '',
 									'max_size' => '',
 									'mime_types' => '',
+								),
+								array(
+									'key' => 'field_5af06880f4e53',
+									'label' => 'Enlace del logo',
+									'name' => 'link',
+									'type' => 'url',
+									'instructions' => '',
+									'required' => 0,
+									'conditional_logic' => 0,
+									'wrapper' => array(
+										'width' => '',
+										'class' => '',
+										'id' => '',
+									),
+									'default_value' => '',
+									'placeholder' => '',
 								),
 							),
 						),

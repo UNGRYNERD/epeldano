@@ -48,7 +48,10 @@
   }
   &__item-logo {
     display: block;
-    margin: 20px 0 0 0;
+    margin: 20px auto 20px auto;
+    .owl-carousel .owl-item & {
+      width: auto;
+    }
   }
   .owl-nav {
     position: absolute;
@@ -71,7 +74,7 @@
     button {
       pointer-events: all;
       padding: 0;
-      &.owl-next { 
+      &.owl-next {
         right: 30px;
         position: absolute;
         &:hover {
