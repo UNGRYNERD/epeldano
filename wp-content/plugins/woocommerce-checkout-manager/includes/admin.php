@@ -81,7 +81,8 @@ function wooccm_admin_notice_print() {
 function wooccm_admin_menu() {
 
 	add_menu_page( 'WooCheckout', 'WooCheckout', 'manage_options', 'woocommerce-checkout-manager' , 'wooccm_options_page', 'dashicons-businessman', 57);
-	add_submenu_page( 'woocommerce-checkout-manager', 'Export', 'Export', 'manage_options', 'wooccm-advance-export', 'wooccm_advance_export' );
+	// @mod - Remove until exports are fixed...
+	// add_submenu_page( 'woocommerce-checkout-manager', 'Export', 'Export', 'manage_options', 'wooccm-advance-export', 'wooccm_advance_export' );
 
 }
 add_action( 'admin_menu', 'wooccm_admin_menu' );
@@ -677,7 +678,7 @@ function wooccm_options_validate( $input ) {
 
 	$detect_error = 0;
 	// translate additional fields
-	if( !empty($input['buttons']) ) {
+	if( !empty( $input['buttons'] ) ) {
 		foreach( $input['buttons'] as $i => $btn ) {
 
 			if( function_exists( 'icl_register_string' ) ) {
@@ -690,7 +691,7 @@ function wooccm_options_validate( $input ) {
 
 				if( !empty($btn['option_array']) ) {	
 					$mysecureop = explode( '||', $btn['option_array']);
-					foreach ( $mysecureop as $one ) {
+					foreach( $mysecureop as $one ) {
 						icl_register_string( 'WooCommerce Checkout Manager', $one, $one );
 					}
 				}
@@ -892,18 +893,18 @@ function wooccm_options_validate_billing( $input ) {
 	$detect_error = 0;
 
 	// translate billing fields
-	if( !empty($input['billing_buttons']) ) {
+	if( !empty( $input['billing_buttons'] ) ) {
 		foreach( $input['billing_buttons'] as $i => $btn ) {
 
 			if( function_exists( 'icl_register_string' ) ) {
 				if( !empty($btn['label']) ) {
-					icl_register_string( 'WooCommerce Checkout Manager', $btn['label'], $btn['label']);
+					icl_register_string( 'WooCommerce Checkout Manager', $btn['label'], $btn['label'] );
 				}
 				if( !empty($btn['placeholder']) ) {
-					icl_register_string( 'WooCommerce Checkout Manager', $btn['placeholder'], $btn['placeholder']);
+					icl_register_string( 'WooCommerce Checkout Manager', $btn['placeholder'], $btn['placeholder'] );
 				}
 
-				if ( !empty($btn['option_array']) ) {
+				if( !empty($btn['option_array']) ) {
 					$mysecureop = explode( '||', $btn['option_array']);
 					foreach( $mysecureop as $one ) {
 						icl_register_string( 'WooCommerce Checkout Manager', $one, $one );
@@ -1143,6 +1144,7 @@ function wooccm_admin_edit_order_additional_details( $order ) {
 <p>&nbsp;</p>
 <h4>' . __( 'Additional Details', 'woocommerce-checkout-manager' ) . '</h4>';
 		foreach( $buttons as $btn ) {
+
 			if(
 				( get_post_meta( $order_id , $btn['cow'], true ) !== '' ) && 
 				!empty( $btn['label'] ) && 
@@ -1207,19 +1209,26 @@ function wooccm_admin_edit_order_additional_details( $order ) {
 				$attachments = ( $attachments !== '' ? explode( ",", $attachments ) : false );
 				echo '
 <p class="form-field form-field-wide form-field-type-wooccmupload">
-	<strong>'.wooccm_wpml_string( trim( $btn['label'] ) ).':</strong><br />';
+	<strong>'.wooccm_wpml_string( trim( $btn['label'] ) ).':</strong>';
+if( empty( $attachments ) ) {
+	echo '<br />';
+	echo '-';
+}
+				echo '
+</p>' . "\n";
 				if( !empty( $attachments ) ) {
+					echo '<ul>' . "\n";
 					foreach( $attachments as $attachment ) {
 						$attachment_url = wp_get_attachment_url( $attachment );
-						echo '<a href="' . $attachment_url . '" target="_blank">' . basename( $attachment_url ) . '</a><br />';
+						if( !empty( $attachment_url ) )
+							echo '<li><a href="' . $attachment_url . '" target="_blank">' . basename( $attachment_url ) . '</a></li>' . "\n";
 					}
-				} else {
-					echo '-';
+					echo '</ul>';
 				}
 				echo '
-</p>
 <!-- .form-field-type-wooccmupload -->';
 			}
+
 		}
 	}
 
@@ -1249,6 +1258,7 @@ function wooccm_admin_edit_order_billing_details( $order ) {
 			'phone'
 		);
 		foreach( $buttons as $btn ) {
+
 			if( !in_array( $btn['cow'], $fields ) ) {
 				if(
 					( get_post_meta( $order_id , sprintf( '_billing_%s', $btn['cow'] ), true ) !== '' ) && 
@@ -1318,20 +1328,27 @@ function wooccm_admin_edit_order_billing_details( $order ) {
 					$btn['label'] = ( !empty( $btn['force_title2'] ) ? $btn['force_title2'] : $btn['label'] );
 					echo '
 <p class="form-field form-field-wide form-field-type-wooccmupload">
-	<strong>'.wooccm_wpml_string( trim( $btn['label'] ) ).':</strong><br />';
+	<strong>'.wooccm_wpml_string( trim( $btn['label'] ) ).':</strong>';
+if( empty( $attachments ) ) {
+	echo '<br />';
+	echo '-';
+}
+					echo '
+</p>' . "\n";
 					if( !empty( $attachments ) ) {
+						echo '<ul>' . "\n";
 						foreach( $attachments as $attachment ) {
 							$attachment_url = wp_get_attachment_url( $attachment );
-							echo '<a href="' . $attachment_url . '" target="_blank">' . basename( $attachment_url ) . '</a><br />';
+							if( !empty( $attachment_url ) )
+								echo '<li><a href="' . $attachment_url . '" target="_blank">' . basename( $attachment_url ) . '</a></li>' . "\n";
 						}
-					} else {
-						echo '-';
+						echo '</ul>';
 					}
 					echo '
-</p>
 <!-- .form-field-type-wooccmupload -->';
 				}
 			}
+
 		}
 	}
 
@@ -1427,17 +1444,23 @@ function wooccm_admin_edit_order_shipping_details( $order ) {
 					$btn['label'] = ( !empty( $btn['force_title2'] ) ? $btn['force_title2'] : $btn['label'] );
 					echo '
 <p class="form-field form-field-wide form-field-type-wooccmupload">
-	<strong>'.wooccm_wpml_string( trim( $btn['label'] ) ).':</strong><br />';
+	<strong>'.wooccm_wpml_string( trim( $btn['label'] ) ).':</strong>';
+if( empty( $attachments ) ) {
+	echo '<br />';
+	echo '-';
+}
+					echo '
+</p>' . "\n";
 					if( !empty( $attachments ) ) {
+						echo '<ul>' . "\n";
 						foreach( $attachments as $attachment ) {
 							$attachment_url = wp_get_attachment_url( $attachment );
-							echo '<a href="' . $attachment_url . '" target="_blank">' . basename( $attachment_url ) . '</a><br />';
+							if( !empty( $attachment_url ) )
+								echo '<li><a href="' . $attachment_url . '" target="_blank">' . basename( $attachment_url ) . '</a></li>' . "\n";
 						}
-					} else {
-						echo '-';
+						echo '</ul>';
 					}
 					echo '
-</p>
 <!-- .form-field-type-wooccmupload -->';
 				}
 			}
@@ -1591,10 +1614,10 @@ jQuery(document).ready(function($) {
 					<attr title="<?php _e( 'Attachment ID', 'woocommerce-checkout-manager' ); ?>"><?php _e('ID','woocommerce-checkout-manager'); ?></attr>
 				</th>
 				<th><?php _e( 'Image', 'woocommerce-checkout-manager' ); ?></th>
-				<th><?php _e( 'Action', 'woocommerce-checkout-manager' ); ?></th>
+				<th><?php _e( 'Filename', 'woocommerce-checkout-manager' ); ?></th>
 				<th><?php _e( 'Dimensions', 'woocommerce-checkout-manager' ); ?></th>
 				<th><?php _e( 'Extension',' woocommerce-checkout-manager' ); ?></th>
-				<th><?php _e( 'Name', 'woocommerce-checkout-manager' ); ?></th>
+				<th class="column-actions"><?php _e( 'Actions', 'woocommerce-checkout-manager' ); ?></th>
 			</tr>
 		</thead>
 
@@ -1623,11 +1646,8 @@ jQuery(document).ready(function($) {
 				});
 				</script>
 				<td>' . $attachment_id . '</td>
-				<td>' . wp_get_attachment_image( $attachment_id, array( 75, 75 ), true ) . '</td>
-				<td style="text-align:left;">
-					<a href="' . $image_attributes2[0] . '" target="_blank">' . __( 'Download', 'woocommerce-checkout-manager' ) . '</a><br />
-					<a class="delete tips wccm_delete wccmx_' . esc_attr( $attachment_id ) . '" data-tip="' . __( 'Delete image', 'woocommerce-checkout-manager' ) . '">' . __( 'Delete', 'woocommerce-checkout-manager' ) . '</a>
-				</td>
+				<td>' . wp_get_attachment_link( $attachment_id, '' , false, false, wp_get_attachment_image( $attachment_id, array( 75, 75 ), false ) ) . '</td>
+				<td>' . wp_get_attachment_link( $attachment_id, '' , false, false, preg_replace( '/\.[^.]+$/', '', $filename ) ) . '</td>
 				<td>';
 			if( $image_attributes2[1] == '' ) {
 				echo '-';
@@ -1636,7 +1656,10 @@ jQuery(document).ready(function($) {
 			}
 			echo '</td>
 				<td>' . strtoupper( $wp_filetype['ext'] ) . '</td>
-				<td style="text-align:left;">' . preg_replace( '/\.[^.]+$/', '', $filename ) . '</td>
+				<td class="column-actions" nowrap>
+					<a href="' . $image_attributes2[0] . '" target="_blank" class="button">' . __( 'Download', 'woocommerce-checkout-manager' ) . '</a>
+					<a class="delete tips wccm_delete wccmx_' . esc_attr( $attachment_id ) . ' button" data-tip="' . __( 'Delete file', 'woocommerce-checkout-manager' ) . '">' . __( 'Delete file', 'woocommerce-checkout-manager' ) . '</a>
+				</td>
 			</tr>
 ';
 
@@ -1692,14 +1715,14 @@ jQuery(document).ready(function($) {
 
 				if(formdata) {
 					$.ajax({
-						url: "<?php echo admin_url('/admin-ajax.php?action=wccs_upload_file_func&order_id='.$post->ID.'&name=files_wccm'); ?>",
+						url: "<?php echo admin_url('/admin-ajax.php?action=wccs_upload_file_func&order_id='.$order_id.'&name=files_wccm'); ?>",
 						type: "POST",
 						data: formdata,
 						processData: false,
 						contentType: false,
 						success: function (res) {
 							$('#files_wccm').show();
-							$(".wccm_results").html("Files Uploaded Successfully.");
+							$(".wccm_results").html("Files uploaded successfully.");
 							/* $(".wccm_results").html(res); */
 
 							$.ajax({
@@ -1707,7 +1730,7 @@ jQuery(document).ready(function($) {
 								data: {},
 								success: function (data) {
 									$("div#product_images_container").html($(data).find("div#product_images_container"));
-									$(".wccm_results").html("Files Uploaded Successfully.");
+									$(".wccm_results").html("Files uploaded successfully.");
 									/* $(".wccm_results").html(data); */
 								},
 								dataType: 'html'
@@ -1799,7 +1822,7 @@ jQuery(document).ready(function($) {
 
 <?php wp_enqueue_style( 'wccm_upload_file_style', plugins_url( 'includes/templates/admin/edit-order-uploads-file_editing_table.css', WOOCCM_RELPATH ) ); ?>
 
-<h2><?php echo ( empty( $options['checkness']['upload_title'] ) ) ? 'Order Uploaded Files' : esc_attr( $options['checkness']['upload_title'] ); ?></h2>
+<h2><?php echo ( empty( $options['checkness']['upload_title'] ) ? 'Order Uploaded Files' : esc_attr( $options['checkness']['upload_title'] ) ); ?></h2>
 <div class="woocommerce_order_items_wrapper front_end">
 	<table class="woocommerce_order_items front_end">
 
@@ -1807,11 +1830,10 @@ jQuery(document).ready(function($) {
 			<tr>
 				<th style="width:15%;text-align: center;"><?php _e( 'Attachment ID', 'woocommerce-checkout-manager' ); ?></th>
 				<th style="width:12%"><?php _e( 'Image', 'woocommerce-checkout-manager' ); ?></th>
-				<th style="width:10%"><?php _e( 'Action', 'woocommerce-checkout-manager' ); ?></th>
+				<th style="width:30%;text-align: center;"><?php _e( 'Name', 'woocommerce-checkout-manager' ); ?></th>
 				<th style="width:12%"><?php _e( 'Dimensions', 'woocommerce-checkout-manager' ); ?></th>
 				<th style="width:8%"><?php _e( 'Extension' ,'woocommerce-checkout-manager' ); ?></th>
-				<th style="width:4%"><?php _e( 'Link', 'woocommerce-checkout-manager' ); ?></th>
-				<th style="width:30%;text-align: center;"><?php _e( 'Name', 'woocommerce-checkout-manager' ); ?></th>
+				<th style="width:10%" class="column-actions"><?php _e( 'Actions', 'woocommerce-checkout-manager' ); ?></th>
 			</tr>
 		</thead>
 
@@ -1846,9 +1868,7 @@ jQuery(document).ready(function($) {
 			</td>
 			<td>'.$attachment_id.'</td>
 			<td>'.wp_get_attachment_link( $attachment_id, '' , false, false, wp_get_attachment_image( $attachment_id, array(75,75), true ) ).'</td>
-			<td>
-				<a class="delete tips wccm_delete wccmx_' . esc_attr( $attachment_id ) . '" data-tip="' . __( 'Delete image', 'woocommerce-checkout-manager' ) . '">' . __( 'Delete', 'woocommerce-checkout-manager' ) . '</a>
-			</td>
+			<td>'.wp_get_attachment_link( $attachment_id, '' , false, false, preg_replace( '/\.[^.]+$/', '', $filename ) ).'</td>
 			<td>';
 				if( $image_attributes2[1] == '' ) {
 					echo '-';
@@ -1857,9 +1877,10 @@ jQuery(document).ready(function($) {
 				}
 				echo '
 			</td>
-			<td>'.$wp_filetype['ext'].'</td>
-			<td>'.wp_get_attachment_link( $attachment_id, '' , false, false, 'Link' ).'</td>
-			<td>'.preg_replace( '/\.[^.]+$/', '', $filename).'</td>
+			<td>' . strtoupper( $wp_filetype['ext'] ) . '</td>
+			<td class="column-actions" nowrap>
+				<a class="delete tips wccm_delete wccmx_' . esc_attr( $attachment_id ) . ' button" data-tip="' . __( 'Delete file', 'woocommerce-checkout-manager' ) . '">' . __( 'Delete file', 'woocommerce-checkout-manager' ) . '</a>
+			</td>
 		</tr>';
 			}
 		} else {
@@ -1878,7 +1899,7 @@ jQuery(document).ready(function($) {
 </div>
 <!-- .woocommerce_order_items_wrapper -->
 
-<button type="button" id="wccm_save_order_submit" class="file_upload_delete wooccm-btn wooccm-btn-danger delete"><php _e( 'Confirm Delete', 'woocommerce-checkout-manager' ); ?></button>
+<button type="button" id="wccm_save_order_submit" class="file_upload_delete wooccm-btn wooccm-btn-danger delete"><?php _e( 'Confirm Delete', 'woocommerce-checkout-manager' ); ?></button>
 
 <span id="wccm_uploader_select">
 	<input type="file" style="display:none;" name="files_wccm" id="files_wccm" multiple />
@@ -1916,7 +1937,7 @@ jQuery(document).ready(function($){
 
 			var length = '.$length.';
 			var file_array = ' . wooccm_js_array( $file_types ) . ';
-			var wooempt = ' . implode( ',', $file_types ) . ';
+			var wooempt = "' . implode( ',', $file_types ) . '";
 
 			for ( i = 0; i < length; i++ ) {
 				file = this.files[i];
@@ -1931,7 +1952,7 @@ jQuery(document).ready(function($){
 
 					if (formdata) {
 						$.ajax({
-							url: "'.admin_url('/admin-ajax.php?action=wccs_upload_file_func&order_id='.$post->ID.'&name=files_wccm').'",
+							url: "'.admin_url('/admin-ajax.php?action=wccs_upload_file_func&order_id='.$order_id.'&name=files_wccm').'",
 							type: "POST",
 							data: formdata,
 							processData: false,
@@ -1972,8 +1993,6 @@ function wccs_upload_file_func_callback( $order_id ) {
 
 	$order_id = ( isset( $_REQUEST['order_id'] ) ? absint( $_REQUEST['order_id'] ) : false );
 
-	$order = new WC_Order( $order_id );
-
 	// load files
 	require_once( ABSPATH . 'wp-admin/includes/file.php' ); 
 	require_once( ABSPATH . 'wp-admin/includes/media.php' );
@@ -1991,6 +2010,9 @@ function wccs_upload_file_func_callback( $order_id ) {
 		echo ' '.__('Invalid Order. Files were not uploaded.','woocommerce-checkout-manager').'';
 		die();
 	}
+
+	$has_uploads = false;
+	$order = new WC_Order( $order_id );
 
 	$files = $_FILES[''. $name .''];
 	// $upload_overrides = array( 'test_form' => false );
@@ -2010,7 +2032,7 @@ function wccs_upload_file_func_callback( $order_id ) {
 					);
 
 					// $movefile = wp_handle_upload($file, $upload_overrides);
-					$movefile = wp_handle_upload($file);
+					$movefile = wp_handle_upload( $file );
 
 					// Check if the save process failed
 					if( isset( $movefile['error'] ) ) {
@@ -2036,20 +2058,7 @@ function wccs_upload_file_func_callback( $order_id ) {
 					$attach_data = wp_generate_attachment_metadata( $attach_id, $movefile['url'] );
 					wp_update_attachment_metadata( $attach_id, $attach_data );
 
-					// send email
-					$email_recipients = $options['checkness']['wooccm_notification_email'];
-					$message_content = '
-This is an automatic message from WooCommerce Checkout Manager, reporting that files has been uploaded by '.$order->billing_first_name.' '.$order->billing_last_name.'.<br />
-<h3>Customer Details</h3>
-Name: '.$order->billing_first_name.' '.$order->billing_last_name.'<br />
-E-mail: '.$order->billing_email.'<br />
-Order Number: '.$order_id.' <br /> 
-You can view the files and order details via back-end by following this <a href="'.admin_url('/post.php?post='.$order_id.'&action=edit').'">link</a>.
-';
-
-					add_filter( 'wp_mail_content_type', 'wooccm_set_html_content_type' );
-					wp_mail( $email_recipients, sprintf( __( 'WooCommerce Checkout Manager - Files Uploaded by Customer [%s]', 'woocommerce-checkout-manager' ), $order->billing_first_name . ' ' . $order->billing_last_name ), $message_content );
-					remove_filter( 'wp_mail_content_type', 'wooccm_set_html_content_type' );
+					$has_uploads = true;
 
 				} else {
 
@@ -2080,23 +2089,45 @@ You can view the files and order details via back-end by following this <a href=
 					require_once( ABSPATH . 'wp-admin/includes/image.php' );
 					$attach_data = wp_generate_attachment_metadata( $attach_id, $URLpath );
 					wp_update_attachment_metadata( $attach_id, $attach_data );
-					// send email
-					$email_recipients = get_option('admin_email');
-					$message_content = '
-This is an automatic message from WooCommerce Checkout Manager, reporting that files has been uploaded by '.$order->billing_first_name.' '.$order->billing_last_name.'.<br />
-<h3>Customer Details</h3>
-Name: '.$order->billing_first_name.' '.$order->billing_last_name.'<br />
-E-mail: '.$order->billing_email.'<br />
-Order Number: '.$order_id.' <br /> 
-You can view the files and order details via back-end by following this <a href="'.admin_url( '/post.php?post='.$order_id.'&action=edit' ).'">link</a>.
-';
 
-					add_filter( 'wp_mail_content_type', 'wooccm_set_html_content_type' );
-					wp_mail( $email_recipients, __( 'WooCommerce Checkout Manager - Files Uploaded by Customer', 'woocommerce-checkout-manager' ), $message_content );
-					remove_filter( 'wp_mail_content_type', 'wooccm_set_html_content_type' );
+					$has_uploads = true;
 
 				}
 			}
+		}
+		if( $has_uploads ) {
+
+			// send email
+			$email_recipients = $options['checkness']['wooccm_notification_email'];
+			if( empty( $email_recipients ) )
+				$email_recipients = get_option( 'admin_email' );
+			$email_heading = __( 'Files Uploaded by Customer', 'woocommerce-checkout-manager' );
+			$subject = sprintf( __( 'WooCommerce Checkout Manager - %s [%s]', 'woocommerce-checkout-manager' ), $email_heading, $order->billing_first_name . ' ' . $order->billing_last_name );
+
+			$mailer = WC()->mailer();
+
+			// Buffer
+			ob_start();
+?>
+<p>This is an automatic message from WooCommerce Checkout Manager, reporting that files have been uploaded by <?php echo $order->billing_first_name; ?> <?php echo $order->billing_last_name; ?>.</p>
+<h3>Customer Details</h3>
+<ul>
+	<li>Name: <?php echo $order->billing_first_name; ?> <?php $order->billing_last_name; ?></li>
+	<li>E-mail: <?php echo $order->billing_email; ?></li>
+	<li>Order Number: <?php echo $order_id; ?></li>
+</ul>
+<p>You can view the files and order details via back-end by following this <a href="<?php echo admin_url( '/post.php?post='.$order_id.'&action=edit' ); ?>" target="_blank">link</a>.</p>
+<?php
+			// Get contents
+			$message = ob_get_clean();
+
+			$message = $mailer->wrap_message( $email_heading, $message );
+
+			// add_filter( 'wp_mail_content_type', 'wooccm_set_html_content_type' );
+			// wc_mail( $email_recipients, $subject, $message );
+			$mailer->send( $email_recipients, strip_tags( $subject ), $message );
+			// remove_filter( 'wp_mail_content_type', 'wooccm_set_html_content_type' );
+
 		}
 		echo ' '.__('Files were uploaded successfully.','woocommerce-checkout-manager').'';
 	} else {
@@ -2141,7 +2172,7 @@ function update_attachment_wccm_callback() {
 				wp_delete_attachment( $attachment_ids[$key] );
 			}
 		}
-		echo __('Deleted Successfully.','woocommerce-checkout-manager');
+		echo __('Deleted successfully.','woocommerce-checkout-manager');
 	}
 	die();
 

@@ -158,7 +158,7 @@ jQuery(document).ready(function($){
 				loadfiles.push(file);
 
 				$.ajax({
-					url: "<?php echo admin_url('/admin-ajax.php?action=wooccm_front_endupload&name='.$btn['cow'].''); ?>",
+					url: "<?php echo admin_url('/admin-ajax.php?action=wooccm_front_endupload&name=shipping_'.$btn['cow'].''); ?>",
 					type: "POST",
 					data: formdata,
 					processData: false,

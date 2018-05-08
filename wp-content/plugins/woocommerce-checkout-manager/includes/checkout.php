@@ -19,6 +19,25 @@ function wooccm_checkout_additional_positioning() {
 
 }
 
+function wooccm_checkout_default_address_fields( $fields ) {
+
+	// Billing fields
+	$options = get_option( 'wccs_settings3' );
+	$buttons = ( isset( $options['billing_buttons'] ) ? $options['billing_buttons'] : false );
+	if( !empty( $buttons ) ) {
+		foreach( $buttons as $btn ) {
+			if( !empty( $btn['cow'] ) && empty( $btn['deny_checkout'] ) ) {
+				$key = $btn['cow'];
+				if( isset( $fields[$key] ) )
+					$fields[$key]['required'] = ( isset( $btn['checkbox'] ) ? $btn['checkbox'] : ( isset( $fields[$key]['required'] ) ? $fields[$key]['required'] : false ) );
+			}
+		}
+	}
+
+	return $fields;
+
+}
+
 function wooccm_autocreate_account( $fields ) {
 
 	$options = get_option( 'wccs_settings' );
@@ -436,7 +455,7 @@ function wooccm_custom_checkout_field_process() {
 					$btn['type'] !== 'heading'
 				) {
 					if( ( sanitize_text_field( $_POST[$btn['cow']] ) == $btn['check_2'] )  && ( !empty ($btn['checkbox'] ) ) ) {
-						$message = sprintf( __( '%s is a required field.', 'woocommerce' ), '<strong>' . wooccm_wpml_string( $btn['label'] ) . '</strong>' );
+						$message = sprintf( __( '%s is a required field.bbb', 'woocommerce' ), '<strong>' . wooccm_wpml_string( $btn['label'] ) . '</strong>' );
 						wc_add_notice( $message, 'error' );
 					}
 				}

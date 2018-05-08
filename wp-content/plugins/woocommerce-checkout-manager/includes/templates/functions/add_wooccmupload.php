@@ -165,16 +165,14 @@ jQuery(document).ready(function($){
 						loadfiles.push(file);
 
 						$.ajax({
-							/* @mod - Test change of formatting */
-							url: "<?php echo admin_url('/admin-ajax.php?action=wooccm_front_endupload&order_id='.$post->ID.'&name='.$btn['cow'].''); ?>",
-							/* url: "<?php echo admin_url('/admin-ajax.php?action=wooccm_front_endupload&name='.$btn['cow'].''); ?>", */
+							url: "<?php echo admin_url('/admin-ajax.php?action=wooccm_front_endupload&name='.$btn['cow'].''); ?>",
 							type: "POST",
 							data: formdata,
 							cache: false,
 							processData: false,
 							contentType: false,
 							success: function (res) {
-								console.dir(res);
+								/* console.dir(res); */
 								var result = $.parseJSON(res), new_val;
 								/* @mod - Test formatting change */
 /*

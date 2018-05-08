@@ -5,15 +5,18 @@
     padding: 30px 15px;
   }
   &__wrapper {
-    background-size: contain;
+    background-size: 78%;
     background-position: right bottom;
     background-repeat: no-repeat;
     max-width: $container-px;
     margin: 0 auto;
+    @media (max-width: $md) {
+      background-size: contain;
+    }
   }
   &__content {
-    flex: 0 0 40%;
-    max-width: 40%;
+    flex: 0 0 48%;
+    max-width: 48%;
     font-size: rem(34px);
     font-weight: bold;
     line-height: 1.03;

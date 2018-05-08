@@ -8,9 +8,9 @@ function wooccm_install() {
 
 	update_option( WOOCCM_PREFIX . '_update_notice', 0 );
 
-	if( function_exists( 'icl_register_string' ) ) {
+	if( function_exists( 'icl_register_string' ) )
 		icl_register_string( 'WooCommerce Checkout Manager', 'is a required field.', 'is a required field.' );
-	}
+
 	if( empty( $options['checkness']['position'] ) ) {
 		$options['checkness']['position'] = 'after_order_notes';
 	}

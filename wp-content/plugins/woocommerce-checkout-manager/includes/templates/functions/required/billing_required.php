@@ -29,7 +29,7 @@ function wooccm_billing_custom_checkout_process() {
 				$btn['type'] !== 'heading'
 			) {
 				if( empty( $_POST[sprintf( 'billing_%s', $btn['cow'] )] ) ) {
-					$message = sprintf( __( '%s is a required field.', 'woocommerce' ), '<strong>' . wooccm_wpml_string( $btn['label'] ) . '</strong>' );
+					$message = sprintf( __( '%s is a required field.44', 'woocommerce' ), '<strong>' . wooccm_wpml_string( $btn['label'] ) . '</strong>' );
 					wc_add_notice( $message, 'error' );
 				}
 			}
@@ -46,7 +46,7 @@ function wooccm_billing_custom_checkout_process() {
 				$btn['type'] !== 'heading'
 			) {
 				if( ( sanitize_text_field( $_POST[sprintf( 'billing_%s', $btn['cow'] )] ) == $btn['check_2'] ) && ( !empty( $btn['checkbox'] ) ) ) {
-					$message = sprintf( __( '%s is a required field.', 'woocommerce' ), '<strong>' . wooccm_wpml_string( $btn['label'] ) . '</strong>' );
+					$message = sprintf( __( '%s is a required field.999', 'woocommerce' ), '<strong>' . wooccm_wpml_string( $btn['label'] ) . '</strong>' );
 					wc_add_notice( $message, 'error');
 				}
 			}
@@ -70,7 +70,7 @@ function wooccm_billing_custom_checkout_process() {
 				if( in_array( $values['product_id'], $show_field_array ) && ( count( $woocommerce->cart->cart_contents ) < 2 ) ) {
 					if( !empty( $btn['checkbox'] ) && !empty( $btn['label'] ) && ( $btn['type'] !== 'changename' ) ) {
 						if( empty( $_POST[sprintf( 'billing_%s', $btn['cow'] )] ) ) {
-							$message = sprintf( __( '%s is a required field.', 'woocommerce' ), '<strong>' . wooccm_wpml_string( $btn['label'] ) . '</strong>' );
+							$message = sprintf( __( '%s is a required field.000', 'woocommerce' ), '<strong>' . wooccm_wpml_string( $btn['label'] ) . '</strong>' );
 							wc_add_notice( $message, 'error' );
 						}
 					}
@@ -93,7 +93,7 @@ function wooccm_billing_custom_checkout_process() {
 						if( in_array( $term->slug, $show_field_array_cat ) && ( count( $woocommerce->cart->cart_contents ) < 2 ) ) {
 							if( !empty( $btn['checkbox'] ) && !empty( $btn['label'] ) && ( $btn['type'] !== 'changename' ) ) {
 								if( empty( $_POST[sprintf( 'billing_%s', $btn['cow'] )] ) ) {
-									$message = sprintf( __( '%s is a required field.', 'woocommerce' ), '<strong>' . wooccm_wpml_string( $btn['label'] ) . '</strong>' );
+									$message = sprintf( __( '%s is a required field.11', 'woocommerce' ), '<strong>' . wooccm_wpml_string( $btn['label'] ) . '</strong>' );
 									wc_add_notice( $message, 'error' );
 								}
 							}
@@ -117,7 +117,7 @@ function wooccm_billing_custom_checkout_process() {
 			if( array_intersect( $productsarraycm, $show_field_array ) ) {
 				if( !empty( $btn['checkbox'] ) && !empty( $btn['label'] ) && ( $btn['type'] !== 'changename' ) ) {
 					if( empty( $_POST[sprintf( 'billing_%s', $btn['cow'] )] ) ) {
-						$message = sprintf( __( '%s is a required field.', 'woocommerce' ), '<strong>' . wooccm_wpml_string( $btn['label'] ) . '</strong>' );
+						$message = sprintf( __( '%s is a required field.22', 'woocommerce' ), '<strong>' . wooccm_wpml_string( $btn['label'] ) . '</strong>' );
 						wc_add_notice( $message, 'error' );
 					}
 				}
@@ -135,7 +135,7 @@ function wooccm_billing_custom_checkout_process() {
 			if( array_intersect( $categoryarraycm, $show_field_array_cat ) ) {
 				if( !empty( $btn['checkbox'] ) && !empty( $btn['label'] ) && ( $btn['type'] !== 'changename' ) ) {
 					if( empty( $_POST[sprintf( 'billing_%s', $btn['cow'] )] ) ) {
-						$message = sprintf( __( '%s is a required field.', 'woocommerce' ), '<strong>' . wooccm_wpml_string( $btn['label'] ) . '</strong>' );
+						$message = sprintf( __( '%s is a required field.33', 'woocommerce' ), '<strong>' . wooccm_wpml_string( $btn['label'] ) . '</strong>' );
 						wc_add_notice( $message, 'error' );
 					}
 				}

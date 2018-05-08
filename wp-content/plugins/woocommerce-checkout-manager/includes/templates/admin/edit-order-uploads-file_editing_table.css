@@ -1,7 +1,24 @@
 /*Copied from bootstrap */
 
-.woocommerce_order_items.front_end tbody td, .woocommerce_order_items.back_end tbody td {
+.woocommerce_order_items.front_end tbody td {
 	text-align: center;
+}
+.woocommerce_order_items.back_end {
+	width:100%;
+}
+.woocommerce_order_items.back_end th,
+.woocommerce_order_items.back_end td {
+	text-align:left;
+	line-height:26px;
+}
+.woocommerce_order_items.back_end th.column-actions {
+	padding: .75em 1em;
+}
+.woocommerce_order_items.back_end td.column-actions {
+	padding-right:1em;
+}
+.woocommerce_order_items.back_end .column-actions {
+	text-align:right;
 }
 
 .btn {

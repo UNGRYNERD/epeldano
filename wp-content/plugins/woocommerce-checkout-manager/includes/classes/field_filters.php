@@ -17,12 +17,12 @@ function wooccm_checkout_field_text_handler( $field = '', $key, $args, $value ) 
 	if( !empty($args['user_role']) && (!empty($args['role_options']) || !empty($args['role_options2'])) ) {
 		$rolekeys = explode('||',$args['role_options']);
 		$rolekeys2 = explode('||',$args['role_options2']);
-			if( !empty($args['role_options']) && !in_array($user_role, $rolekeys) ) {
-				return;
-			}
-			if( !empty($args['role_options2']) && in_array($user_role, $rolekeys2) ) {
-				return;
-			}
+		if( !empty($args['role_options']) && !in_array($user_role, $rolekeys) ) {
+			return;
+		}
+		if( !empty($args['role_options2']) && in_array($user_role, $rolekeys2) ) {
+			return;
+		}
 	}	
 
 	if( !empty( $args['clear'] ) )
@@ -30,11 +30,10 @@ function wooccm_checkout_field_text_handler( $field = '', $key, $args, $value ) 
 	else
 		$after = '';
 
+	$required = false;
 	if( $args['wooccm_required'] ) {
 		$args['class'][] = 'validate-required';
 		$required = ' <abbr class="required" title="' . esc_attr( 'required', 'woocommerce-checkout-manager' ) . '">*</abbr>';
-	} else {
-		$required = '';
 	}
 
 	$args['maxlength'] = ( $args['maxlength'] ) ? 'maxlength="' . absint( $args['maxlength'] ) . '"' : '';
@@ -412,18 +411,21 @@ function wooccm_checkout_field_state_handler( $field = '', $key, $args, $value )
 
 	$args['class'][] = 'address-field';
 
-	// Get Country
-	// @mod - This is where the Billing/Shipping State bug lies...
 	$country_key = $key == 'billing_state' ? 'billing_country' : 'shipping_country';
 	$current_cc  = WC()->checkout->get_value( $country_key );
 	$states      = WC()->countries->get_states( $current_cc );
 
 	if( $args['wooccm_required'] ) {
-		if( !empty( $states ) )
-			$args['class'][] = 'validate-required';
-		$required = ' <abbr class="required" title="' . esc_attr( 'required', 'woocommerce-checkout-manager' ) . '">*</abbr>';
+		if( !empty( $states ) ) {
+			if( !in_array( 'validate-required', $args['class'] ) )
+				$args['class'][] = 'validate-required';
+			$required = ' <abbr class="required" title="' . esc_attr( 'required', 'woocommerce-checkout-manager' ) . '">*</abbr>';
+		} else {
+			$args['class'][] = 'woocommerce-validated';
+		}
 	} else {
 		$required = '';
+		$args['class'][] = 'woocommerce-validated';
 	}
 
 	$args['maxlength'] = ( $args['maxlength'] ) ? 'maxlength="' . absint( $args['maxlength'] ) . '"' : '';

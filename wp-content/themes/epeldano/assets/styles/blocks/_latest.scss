@@ -1,9 +1,9 @@
 .latest {
-  background-color: $primary;    
+  background-color: $primary;
   text-align: center;
   padding: 68px 15px;
   @media (max-width: 992px) {
-    padding: 30px 15px;    
+    padding: 30px 15px;
   }
   &__title {
     font-size: rem(28px);
@@ -36,7 +36,6 @@
   }
   &__link {
     font-size: rem(20px);
-    font-weight: 300;
     line-height: 0.65;
     letter-spacing: -0.3px;
     color: $black;

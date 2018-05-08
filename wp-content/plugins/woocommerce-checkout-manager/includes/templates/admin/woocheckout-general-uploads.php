@@ -54,7 +54,7 @@
 	<div class="section">
 		<h3 class="heading"><?php _e('Notification E-mail', 'woocommerce-checkout-manager');  ?></h3>
 		<div class="option">
-			<input type="text" name="wccs_settings[checkness][wooccm_notification_email]" class="full-width" value="<?php echo ( isset( $options['checkness']['wooccm_notification_email'] ) ? sanitize_text_field( $options['checkness']['wooccm_notification_email'] ) : '' ); ?>" />
+			<input type="text" name="wccs_settings[checkness][wooccm_notification_email]" class="full-width" value="<?php echo ( isset( $options['checkness']['wooccm_notification_email'] ) ? sanitize_text_field( $options['checkness']['wooccm_notification_email'] ) : '' ); ?>" placeholder="<?php echo get_option( 'admin_email' ); ?>" />
 		</div>
 		<!-- .option -->
 	</div>

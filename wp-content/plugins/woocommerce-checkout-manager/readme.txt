@@ -4,8 +4,8 @@ Contributors: visser, visser.labs, Emark
 Donate link: https://www.visser.com.au/donations/
 Tags: woocommerce, ecommerce, e-commerce, store, cart, checkout, manager, editor, field, shipping, billing, order
 Requires at least: 3.0
-Tested up to: 4.9.2
-Stable tag: 4.1.7
+Tested up to: 4.9.5
+Stable tag: 4.2.1
 License: GPLv2 or later
 
 Manages WooCommerce Checkout, the advanced way.
@@ -134,6 +134,21 @@ Example:
 8. Customize Checkout fields from the WooCheckout menu item in the WordPress Administration.
 
 == Changelog ==
+
+= 4.2.1 =
+* Fixed: PHP warning on Checkout screen (thanks @chefpanda123)
+
+= 4.2 =
+* Fixed: Billing State and Shipping State required validation
+* Fixed: Display required state for Billing Address 2 and Shipping Address 2 (thanks James)
+
+= 4.1.9 =
+* Fixed: Styling placement of Reset, Import and Save Changes buttons
+
+= 4.1.8 =
+* Changed: Removed Export menu until exports are fixed
+* Fixed: Uploaded files notification e-mail not working (thanks John)
+* Changed: Using wc_mail() instead of wp_mail() for e-mail generation
 
 = 4.1.7 =
 * Fixed: Undefined notice in e-mail template (thanks Vitor)

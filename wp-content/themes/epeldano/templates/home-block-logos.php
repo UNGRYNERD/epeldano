@@ -5,7 +5,13 @@
     <?php $logos = get_sub_field('logos'); ?>
     <div class="logos__wrap">
     <?php foreach($logos as $logo): ?>
+      <?php if (!empty(get_field('image_link', $logo['ID']))) : ?>
+        <a target="_blank" href="<?= get_field('image_link', $logo['ID']); ?>">
+          <?= wp_get_attachment_image($logo['ID'], 'ungrynerd_small' ); ?>
+        </a>
+      <?php else : ?>
         <?= wp_get_attachment_image($logo['ID'], 'ungrynerd_small' ); ?>
+      <?php endif; ?>
     <?php endforeach; ?>
     </div>
     <?php $link = get_sub_field('link'); ?>

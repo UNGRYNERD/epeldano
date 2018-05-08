@@ -3,7 +3,7 @@
 Plugin Name: WooCommerce Checkout Manager
 Plugin URI: https://wordpress.org/plugins/woocommerce-checkout-manager/
 Description: Manages WooCommerce Checkout, the advanced way.
-Version: 4.1.7
+Version: 4.2.1
 Author: Visser Labs
 Author URI: http://www.visser.com.au
 Contributors: visser, Emark
@@ -13,7 +13,7 @@ Text Domain: woocommerce-checkout-manager
 Domain Path: /languages/
 
 WC requires at least: 2.3
-WC tested up to: 3.3.1
+WC tested up to: 3.3
 */
 
 /*
@@ -80,13 +80,13 @@ register_activation_hook( __FILE__, 'wooccm_install' );
 
 add_action( 'woocommerce_before_checkout_form' , 'wooccm_autocreate_account' );
 // E-mail - Order receipt
-add_action( 'woocommerce_email_after_order_table', 'wooccm_add_payment_method_to_new_order', 10, 3 );
+add_action( 'woocommerce_email_after_order_table', 'wooccm_order_receipt_checkout_details', 10, 3 );
 // Save the Order meta
 add_action( 'woocommerce_checkout_update_order_meta', 'wooccm_custom_checkout_field_update_order_meta' );
 add_action( 'woocommerce_checkout_process', 'wooccm_custom_checkout_field_process' );
 add_action( 'woocommerce_checkout_update_user_meta', 'wooccm_custom_checkout_field_update_user_meta', 10, 2 );
 // Checkout - Order Received
-add_action( 'woocommerce_order_details_after_customer_details', 'wooccm_custom_checkout_details' );
+add_action( 'woocommerce_order_details_after_customer_details', 'wooccm_order_received_checkout_details' );
 add_action( 'woocommerce_checkout_after_customer_details','wooccm_checkout_text_after' );
 add_action( 'woocommerce_checkout_before_customer_details','wooccm_checkout_text_before' );
 add_filter( 'woocommerce_checkout_fields', 'wooccm_remove_fields_filter_billing', 15 );
@@ -98,6 +98,7 @@ add_action( 'wp_head','wooccm_shipping_hide_required' );
 // add_action(	'wooccm_run_color_innerpicker','wooccm_run_color_inner'); run color inside options page (proto)
 add_action( 'woocommerce_before_checkout_form', 'wooccm_override_this' );
 add_filter( 'woocommerce_billing_fields', 'wooccm_checkout_billing_fields' );
+add_filter( 'woocommerce_default_address_fields', 'wooccm_checkout_default_address_fields' );
 add_filter( 'woocommerce_shipping_fields', 'wooccm_checkout_shipping_fields' );
 add_filter( 'wcdn_order_info_fields', 'wooccm_woocommerce_delivery_notes_compat', 10, 2 );
 add_filter( 'wc_customer_order_csv_export_order_row', 'wooccm_csv_export_modify_row_data', 10, 3 );

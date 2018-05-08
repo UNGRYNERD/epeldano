@@ -3,7 +3,7 @@
   margin: 100px auto;
   text-align: center;
   @media (max-width: 992px) {
-    margin: 30px 15px;    
+    margin: 30px 15px;
   }
   &__title {
     font-size: rem(28px);
@@ -18,7 +18,7 @@
     overflow: hidden;
     padding: 50px 100px;
     @media (max-width: 992px) {
-      padding: 0 50px;
+      padding: 20px 50px;
     }
   }
   .owl-nav {
@@ -40,7 +40,7 @@
     button {
       pointer-events: all;
       padding: 0;
-      &.owl-next { 
+      &.owl-next {
         right: 10px;
         position: absolute;
         &:hover {

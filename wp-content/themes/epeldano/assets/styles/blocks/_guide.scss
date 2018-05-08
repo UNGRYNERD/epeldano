@@ -23,6 +23,7 @@
     flex-flow: row-reverse;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     @media (max-width: $md) {
       padding: 30px 15px;
     }

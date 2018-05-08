@@ -156,20 +156,25 @@ th.hide_stuff_days {
 }
 input.wccs_submit_button {
 	float: left;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	margin-left: 15px;
 }
+/*
 input#wccs_reset_submit,
 input#wccs_submit_button {
 	margin-top:10px;
 }
+*/
 .reset_form {
 	float: left;
+}
+.import_form,
+.reset_form {
+	margin-top:10px;
 }
 .import_form {
 	float: left;
 	margin-left: 15px;
-	margin-top: 10px;
 }
 .wccm_importer {
 	font-size:16px;
@@ -180,7 +185,7 @@ input#wccs_submit_button {
 }
 #wccs_reset_submit {
 	float: left;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	width: inherit;
 }
 span.heading_smalla {
@@ -281,7 +286,9 @@ table.widefat {
 	cursor: pointer;
 }
 
-.wccs-table-footer, .billing-wccs-table-footer, .shipping-wccs-table-footer {
+.wccs-table-footer,
+.billing-wccs-table-footer,
+.shipping-wccs-table-footer {
 	position: relative;
 	overflow: hidden;
 	margin-top: 10px;

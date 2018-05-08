@@ -107,7 +107,7 @@
     @media (max-width: $md) {
       font-size: rem(25px);
       padding: 15px;
-      width: auto;
+      width: 100%;
     }
     &:before {
       content: "";

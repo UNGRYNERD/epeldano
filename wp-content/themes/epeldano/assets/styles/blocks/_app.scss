@@ -71,6 +71,7 @@
     }
   }
   &__image {
+    display: block;
     position: absolute;
     right: 0;
     bottom: 0;
@@ -79,6 +80,9 @@
     z-index: 10;
     @media (max-width: $md) {
       position: relative;
+      max-width: 80%;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 }

@@ -63,6 +63,23 @@ function wooccm_checkout_billing_fields( $fields ) {
 				$fields[$key]['class'][] = 'address-field';
 			}
 
+			// Override for State fields
+			if( $fields[$key]['type'] == 'wooccmstate' ) {
+				$country_key = false;
+				if( $key == 'billing_state' )
+					$country_key = 'billing_country';
+				if( $key == 'shipping_state' )
+					$country_key = 'shipping_country';
+				if( !empty( $country_key ) ) {
+					$current_cc  = WC()->checkout->get_value( $country_key );
+					$states      = WC()->countries->get_states( $current_cc );
+					if( empty( $states ) ) {
+						$fields[$key]['required'] = false;
+						$fields[$key]['wooccm_required'] = false;
+					}
+				}
+			}
+
 			// Remove disabled fields
 			if( !empty( $btn['disabled'] ) ) {
 				unset( $fields[$key] );

@@ -9,9 +9,8 @@
   border: 2px solid $primary;
   display: inline-block;
   transition: $transition-standard;
+  font-weight: 400;
   &:hover {
-    background-color: $white;
-    color: $primary;
     text-decoration: none;
   }
 }
