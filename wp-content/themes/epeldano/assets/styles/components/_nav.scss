@@ -1,0 +1,19 @@
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .nav-previous,
+  .nav-next {
+    a {
+      @extend .button;
+    }
+  }
+  .nav-next {
+    margin-left: auto;
+  }
+}
+.posts-navigation {
+  margin: 50px auto;
+  max-width: $container-px;
+  padding: 0 15px;
+}

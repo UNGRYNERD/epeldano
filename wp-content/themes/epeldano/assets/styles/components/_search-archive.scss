@@ -1,0 +1,16 @@
+.search-archive {
+  max-width: $container-px;
+  padding: 0 15px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  input[type=submit] {
+    display: none;
+  }
+  .search-form {
+    margin-right: 15px;
+  }
+  .style-select {
+    min-width: 200px;
+  }
+}

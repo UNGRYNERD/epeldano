@@ -74,37 +74,7 @@
           width: 100%;
         }
         &.destino {
-          border: 1px solid $primary;
-          overflow: hidden;
-          position: relative;
-          &:after {
-            content: "";
-            display: inline-block;
-            width: 0;
-            height: 0;
-            border: 5px solid transparent;
-            border-top: 5px solid $primary;
-            right: 15px;
-            margin-top: -2px;
-            top: 50%;
-            position: absolute;
-            pointer-events: none;
-          }
-          select {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            font-size: rem(14px);
-            letter-spacing: -0.1px;
-            color: $black;
-            padding: 9px 15px;
-            width: 120%;
-            background: transparent;
-            border: 0;
-            &:focus {
-              outline: 0;
-            }
-          }
+          @extend .style-select;
         }
       }
       &--three {
@@ -131,16 +101,6 @@
       letter-spacing: -0.1px;
       text-align: left;
       color: $primary;
-    }
-    input[type=text], input[type=email], textarea {
-      border: 1px solid $primary;
-      font-size: rem(14px);
-      letter-spacing: -0.1px;
-      color: $black;
-      padding: 9px 15px;
-      &::placeholder {
-        color: $black;
-      }
     }
     .wpcf7-list-item {
       margin: 0px;

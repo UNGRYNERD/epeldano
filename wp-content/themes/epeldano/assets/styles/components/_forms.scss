@@ -1,0 +1,75 @@
+input[type=text],
+input[type=email],
+input[type=search],
+textarea {
+  border: 1px solid $primary;
+  font-size: rem(14px);
+  letter-spacing: -0.1px;
+  color: $black;
+  padding: 9px 15px;
+  &::placeholder {
+    color: $black;
+  }
+}
+input[type=submit], button {
+  @extend .button;
+  padding: 12px 20px;
+  border: 0;
+  position: relative;
+  top: 1px;
+}
+label {
+  input[type=checkbox] {
+    display: none;
+    &:checked+.wpcf7-list-item-label {
+      &:before {
+        background-color: $primary;
+      }
+    }
+  }
+  .wpcf7-list-item-label {
+    &:before {
+      display: inline-block;
+      border: solid 1px $primary;
+      width: 18px;
+      height: 18px;
+      position: relative;
+      top: 4px;
+      margin-right: 5px;
+    }
+  }
+}
+
+.style-select {
+  border: 1px solid $primary;
+  overflow: hidden;
+  position: relative;
+  &:after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-top: 5px solid $primary;
+    right: 15px;
+    margin-top: -2px;
+    top: 50%;
+    position: absolute;
+    pointer-events: none;
+  }
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size: rem(14px);
+    letter-spacing: -0.1px;
+    color: $black;
+    padding: 9px 15px;
+    width: 120%;
+    background: transparent;
+    border: 0;
+    &:focus {
+      outline: 0;
+    }
+  }
+}

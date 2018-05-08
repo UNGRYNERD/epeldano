@@ -1,0 +1,38 @@
+.s-post {
+  max-width: $container-px;
+  padding: 0 15px;
+  margin: 45px auto 83px auto;
+  &__title {
+    font-size: rem(40px);
+    font-weight: bold;
+    line-height: 0.88;
+    letter-spacing: -0.3px;
+    text-align: left;
+    color: $primary;
+  }
+  &__meta {
+    font-size: rem(15px);
+    letter-spacing: -0.3px;
+    text-align: left;
+    color: $black;
+  }
+  &__content {
+    font-size: rem(20px);
+    font-weight: 300;
+    letter-spacing: -0.3px;
+    text-align: left;
+  }
+  .share {
+    margin: 56px 0 70px 0;
+    &__button {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+
+
+
