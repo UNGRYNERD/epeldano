@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 4.9.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2018-03-03 11:37:06+0000\n"
+"PO-Revision-Date: 2018-04-30 07:59:33+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,6 +25,10 @@ msgstr "1"
 msgctxt "default GMT offset or timezone string"
 msgid "0"
 msgstr "0"
+
+#: wp-admin/includes/plugin-install.php:595
+msgid "Requires PHP Version:"
+msgstr "Necesita la versión de PHP:"
 
 #: wp-admin/customize.php:80
 msgid "This changeset cannot be further modified."
@@ -81,7 +85,7 @@ msgstr "No hay necesidad de cambiar tu CSS aquí &mdash; puedes editar y previsu
 msgid "Did you know?"
 msgstr "¿Lo sabías?"
 
-#: wp-admin/credits.php:122
+#: wp-admin/credits.php:121
 msgid "Noteworthy Contributors"
 msgstr "Colaboradores destacados"
 
@@ -498,7 +502,7 @@ msgstr "Instalación del plugin"
 msgid "Custom installation script."
 msgstr "Script de instalación personalizado."
 
-#: wp-admin/includes/plugin-install.php:594
+#: wp-admin/includes/plugin-install.php:602
 msgid "Active Installations:"
 msgstr "Instalaciones activas:"
 
@@ -754,13 +758,13 @@ msgid "Sorry, you are not allowed to attach files to this post."
 msgstr "Lo siento, no tienes permisos para adjuntar archivos a esta entrada."
 
 #: wp-admin/includes/class-wp-plugin-install-list-table.php:604
-#: wp-admin/includes/plugin-install.php:598
+#: wp-admin/includes/plugin-install.php:606
 msgctxt "Active plugin installations"
 msgid "Less Than 10"
 msgstr "Menos de 10"
 
 #: wp-admin/freedoms.php:47 wp-admin/includes/plugin-install.php:239
-#: wp-admin/includes/plugin-install.php:604 wp-admin/plugin-install.php:82
+#: wp-admin/includes/plugin-install.php:612 wp-admin/plugin-install.php:82
 #: wp-admin/plugins.php:418
 msgid "https://wordpress.org/plugins/"
 msgstr "https://es.wordpress.org/plugins/"
@@ -1216,11 +1220,11 @@ msgstr "Lo siento, no tienes permisos para personalizar cabeceras."
 msgid "Sorry, you are not allowed to import content."
 msgstr "Lo siento, no tienes permisos para importar contenido."
 
-#: wp-admin/credits.php:127
+#: wp-admin/credits.php:126
 msgid "Release Deputy"
 msgstr "Responsable de la versión"
 
-#: wp-admin/credits.php:126
+#: wp-admin/credits.php:125
 msgid "Release Design Lead"
 msgstr "Líder del diseño de la versión"
 
@@ -1426,7 +1430,7 @@ msgstr "Tu archivo %s tiene vacío el prefijo de la tabla de la base de datos, y
 msgid "You are using a development version of WordPress. These feature plugins are also under development. <a href=\"%s\">Learn more</a>."
 msgstr "Estás utilizando una versión de desarrollo de WordPress. Estos plugins destacados también están en desarrollo. <a href=\"%s\">Saber más</a>."
 
-#: wp-admin/includes/plugin-install.php:619
+#: wp-admin/includes/plugin-install.php:627
 msgid "Read all reviews on WordPress.org or write your own!"
 msgstr "¡Lee todas las reseñas en WordPress.org o escribe la tuya!"
 
@@ -1434,7 +1438,7 @@ msgstr "¡Lee todas las reseñas en WordPress.org o escribe la tuya!"
 msgid "Attach to existing content"
 msgstr "Adjuntar al contenido existente"
 
-#: wp-admin/includes/plugin-install.php:618
+#: wp-admin/includes/plugin-install.php:626
 msgid "Reviews"
 msgstr "Reseñas"
 
@@ -1448,7 +1452,7 @@ msgstr "Archivo zip del tema"
 
 #. translators: 1: number of stars (used to determine singular/plural), 2:
 #. number of reviews
-#: wp-admin/includes/plugin-install.php:625
+#: wp-admin/includes/plugin-install.php:633
 msgid "Reviews with %1$d star: %2$s. Opens in a new window."
 msgid_plural "Reviews with %1$d stars: %2$s. Opens in a new window."
 msgstr[0] "Reseñas con %1$d estrella: %2$s. Abre en una nueva ventana."
@@ -1767,7 +1771,7 @@ msgstr "Puedes crear manualmente el archivo %s y pegar el siguiente texto."
 #. translators: 1: wp-config-sample.php, 2: wp-config.php
 #: wp-admin/setup-config.php:169
 msgid "If for any reason this automatic file creation doesn&#8217;t work, don&#8217;t worry. All this does is fill in the database information to a configuration file. You may also simply open %1$s in a text editor, fill in your information, and save it as %2$s."
-msgstr "Si por alguna razón no funciona la creación automática de este archivo no te preocupes. Lo que hace es incluir en un archivo de configuración la información de la base de datos. También puedes simplemente abrir el archivo %1$s en un editor de texto, rellenarlo con tu información y guardarlo como %2$s."
+msgstr "Si por alguna razón no funciona la creación automática de este archivo, no te preocupes. Todo lo que hace es rellenar la información de la base de datos en un archivo de configuración. También puedes simplemente abrir el archivo %1$s en un editor de texto, rellenarlo con tu información y guardarlo como %2$s."
 
 #. translators: %s: wp-config.php
 #: wp-admin/setup-config.php:163
@@ -2749,7 +2753,7 @@ msgid "Plugins updated successfully."
 msgstr "Plugins actualizados con éxito."
 
 #: wp-admin/includes/class-wp-plugin-install-list-table.php:602
-#: wp-admin/includes/plugin-install.php:596
+#: wp-admin/includes/plugin-install.php:604
 msgctxt "Active plugin installations"
 msgid "1+ Million"
 msgstr "Más de un millón"
@@ -3158,7 +3162,7 @@ msgstr[1] "Todos <span class=\"count\">(%s)</span>"
 msgid "If you like, you may enter custom structures for your category and tag URLs here. For example, using <code>topics</code> as your category base would make your category links like <code>%s/topics/uncategorized/</code>. If you leave these blank the defaults will be used."
 msgstr "Si quieres, puedes introducir aquí estructuras personalizadas para las URLs de etiqueta o categoría. Por ejemplo, usando <code>secciones</code> como categoría base hará que los enlaces de categorías sean algo como <code>%s/secciones/sin-categoria/</code>. Si dejas esto en blanco se usarán los ajustes por defecto."
 
-#: wp-admin/credits.php:125
+#: wp-admin/credits.php:124
 msgid "Release Lead"
 msgstr "Líder de la versión"
 
@@ -3222,7 +3226,7 @@ msgstr "<strong>Incompatible</strong> con tu versión de WordPress"
 msgid "<strong>Compatible</strong> with your version of WordPress"
 msgstr "<strong>Compatible</strong> con tu versión de WordPress"
 
-#: wp-admin/includes/plugin-install.php:632
+#: wp-admin/includes/plugin-install.php:640
 msgid "%d star"
 msgid_plural "%d stars"
 msgstr[0] "%d estrella"
@@ -3321,7 +3325,7 @@ msgctxt "Plugin installer section title"
 msgid "Reviews"
 msgstr "Valoraciones"
 
-#: wp-admin/includes/plugin-install.php:642
+#: wp-admin/includes/plugin-install.php:650
 msgid "Contributors"
 msgstr "Colaboradores"
 
@@ -3329,8 +3333,8 @@ msgstr "Colaboradores"
 msgid "The WordPress team is willing to help you. Forward this email to %s and the team will work with you to make sure your site is working."
 msgstr "El equipo de WordPress está deseando ayudarte. Reenvía este correo electrónico a %s y el equipo trabajará contigo para asegurarse que tu sitio funcione."
 
-#: wp-admin/includes/plugin-install.php:608
-#: wp-admin/includes/plugin-install.php:662
+#: wp-admin/includes/plugin-install.php:616
+#: wp-admin/includes/plugin-install.php:670
 msgid "Donate to this plugin &#187;"
 msgstr "Haz un donativo para este plugin &#187;"
 
@@ -3468,7 +3472,7 @@ msgstr "Gracias por crear con <a href=\"%s\">WordPress</a>."
 msgid "Edit status"
 msgstr "Editar estado"
 
-#: wp-admin/credits.php:44 wp-admin/credits.php:107
+#: wp-admin/credits.php:44 wp-admin/credits.php:58
 msgid "https://make.wordpress.org/"
 msgstr "https://make.wordpress.org/"
 
@@ -3585,13 +3589,13 @@ msgstr "Esta pantalla se utiliza para gestionar los temas que tienes instalados.
 msgid "The current theme is displayed highlighted as the first theme."
 msgstr "El tema actual se muestra de forma destacada en primer lugar."
 
-#: wp-admin/themes.php:105
-msgid "Tap or hover on any theme then click the Live Preview button to see a live preview of that theme and change theme options in a separate, full-screen view. You can also find a Live Preview button at the bottom of the theme details screen. Any installed theme can be previewed and customized in this way."
-msgstr "Toca o muévete sobre cualquier tema, luego haz clic en el botón de Vista previa para ver una visualización en directo de ese tema y cambiar los ajustes del tema en una vista separada y a pantalla completa. También encontrarás un botón de Vista previa al fondo de la pantalla de detalles del tema. Cualquier tema instalado puede previsualizarse y personalizarse de este modo."
-
 #: wp-admin/themes.php:107
 msgid "When previewing on smaller monitors, you can use the collapse icon at the bottom of the left-hand pane. This will hide the pane, giving you more room to preview your site in the new theme. To bring the pane back, click on the collapse icon again."
 msgstr "Al previsualizar en monitores pequeños puedes usar el icono de Contraer que está al fondo del panel izquierdo. esto ocultará el panel, dándote más espacio para previsualizar tu sitio con el nuevo tema. Para volver a ver el panel haz clic de nuevo en el icono de Contraer."
+
+#: wp-admin/themes.php:105
+msgid "Tap or hover on any theme then click the Live Preview button to see a live preview of that theme and change theme options in a separate, full-screen view. You can also find a Live Preview button at the bottom of the theme details screen. Any installed theme can be previewed and customized in this way."
+msgstr "Toca o muévete sobre cualquier tema, luego haz clic en el botón de Vista previa para ver una visualización en directo de ese tema y cambiar los ajustes del tema en una vista separada y a pantalla completa. También encontrarás un botón de Vista previa al fondo de la pantalla de detalles del tema. Cualquier tema instalado puede previsualizarse y personalizarse de este modo."
 
 #: wp-admin/themes.php:74
 msgid "Hover or tap to see Activate and Live Preview buttons"
@@ -4500,7 +4504,7 @@ msgstr "¡Gracias por actualizar! Visita la página de <a href=\"%s\">Actualizar
 
 #: wp-admin/setup-config.php:412
 msgid "All right, sparky! You&#8217;ve made it through this part of the installation. WordPress can now communicate with your database. If you are ready, time now to&hellip;"
-msgstr "¡Todo bien amigo! Ya has terminado esta parte de la instalación. Ahora WordPress se puede comunicar con tu base de datos. Si estás listo es hora de&hellip;"
+msgstr "¡Muy bien! Ya has terminado esta parte de la instalación. Ahora WordPress puede comunicarse con tu base de datos. Si estás listo, es el momento de&hellip;"
 
 #: wp-admin/nav-menus.php:805
 msgid "Auto add pages"
@@ -4746,13 +4750,13 @@ msgstr "A continuación deberás introducir los detalles de conexión a tu base 
 msgid "You can also browse a user&#8217;s favorite plugins, by using the Favorites link above the plugins list and entering their WordPress.org username."
 msgstr "También puedes navegar por los plugins favoritos de un usuario usando el enlace Favoritos de la parte superior derecha de la pantalla e introduciendo su nombre de usuario en WordPress.org."
 
-#: wp-admin/plugin-install.php:90
-msgid "If you know what you&#8217;re looking for, Search is your best bet. The Search screen has options to search the WordPress Plugin Directory for a particular Term, Author, or Tag. You can also search the directory by selecting popular tags. Tags in larger type mean more plugins have been labeled with that tag."
-msgstr "Si sabes lo que estás buscando Buscar es tu mejor apuesta. La pantalla de búsqueda tiene opciones para buscar en el directorio de plugins de WordPress.org para un término, autor o etiqueta concretos. También puedes buscar en el directorio eligiendo las etiquetas más populares. Un tamaño de letra más grande indica un número mayor de plugins con esa etiqueta."
-
 #: wp-admin/plugin-install.php:93
 msgid "If you want to install a plugin that you&#8217;ve downloaded elsewhere, click the Upload Plugin button above the plugins list. You will be prompted to upload the .zip package, and once uploaded, you can activate the new plugin."
 msgstr "Si quieres instalar un plugin que hayas descargado por ahí haz clic en el enlace Subir de la parte superior izquierda. Se te pedirá que subas el paquete .zip, y una vez subido podrás activar el nuevo plugin."
+
+#: wp-admin/plugin-install.php:90
+msgid "If you know what you&#8217;re looking for, Search is your best bet. The Search screen has options to search the WordPress Plugin Directory for a particular Term, Author, or Tag. You can also search the directory by selecting popular tags. Tags in larger type mean more plugins have been labeled with that tag."
+msgstr "Si sabes lo que estás buscando Buscar es tu mejor apuesta. La pantalla de búsqueda tiene opciones para buscar en el directorio de plugins de WordPress.org para un término, autor o etiqueta concretos. También puedes buscar en el directorio eligiendo las etiquetas más populares. Un tamaño de letra más grande indica un número mayor de plugins con esa etiqueta."
 
 #: wp-admin/install.php:184 wp-admin/install.php:187
 #: wp-admin/options-reading.php:31 wp-admin/options-reading.php:111
@@ -5003,7 +5007,7 @@ msgstr "Busca un tema basándote en características específicas."
 
 #: wp-admin/setup-config.php:180
 msgid "In all likelihood, these items were supplied to you by your Web Host. If you don&#8217;t have this information, then you will need to contact them before you can continue. If you&#8217;re all ready&hellip;"
-msgstr "Con toda seguridad, estos elementos te los facilitó tu proveedor de alojamiento. Si no tienes esta información necesitas contactar con ellos antes de continuar. Si ya estás listo&hellip;"
+msgstr "Es muy probable que estos elementos te los haya facilitado tu proveedor de alojamiento. Si no tienes esta información, tendrás que ponerte en contacto con ellos para poder continuar. Si ya estás listo&hellip;"
 
 #: wp-admin/theme-editor.php:228
 msgid "This theme is broken."
@@ -5454,7 +5458,7 @@ msgstr "Otras notas"
 msgid "You should update your web.config now."
 msgstr "Deberías actualizar tu archivo web.config ahora."
 
-#: wp-admin/includes/plugin-install.php:606
+#: wp-admin/includes/plugin-install.php:614
 msgid "Plugin Homepage &#187;"
 msgstr "Página principal del plugin &#187;"
 
@@ -5915,7 +5919,7 @@ msgstr ""
 "Por favor, haz clic en el enlace para aceptar la invitación:\n"
 "%4$s"
 
-#: wp-admin/credits.php:128
+#: wp-admin/credits.php:127
 msgid "Core Developer"
 msgstr "Desarrollador del núcleo"
 
@@ -6181,6 +6185,20 @@ msgstr "Usuario borrado de este sitio."
 msgid "Role"
 msgstr "Perfil"
 
+#: wp-admin/menu.php:225
+msgid "All Users"
+msgstr "Todos los usuarios"
+
+#: wp-admin/includes/class-wp-theme-install-list-table.php:408
+#: wp-admin/includes/deprecated.php:1381 wp-admin/includes/theme.php:699
+#: wp-admin/theme-install.php:290 wp-admin/theme-install.php:310
+msgid "Install"
+msgstr "Instalar"
+
+#: wp-admin/menu.php:206
+msgid "Plugins %s"
+msgstr "Plugins %s"
+
 #: wp-admin/edit-tag-form.php:264
 #: wp-admin/includes/class-wp-links-list-table.php:82
 #: wp-admin/includes/class-wp-links-list-table.php:318
@@ -6198,20 +6216,6 @@ msgstr "Perfil"
 #: wp-admin/themes.php:499 wp-admin/widgets.php:320
 msgid "Delete"
 msgstr "Borrar"
-
-#: wp-admin/menu.php:225
-msgid "All Users"
-msgstr "Todos los usuarios"
-
-#: wp-admin/includes/class-wp-theme-install-list-table.php:408
-#: wp-admin/includes/deprecated.php:1381 wp-admin/includes/theme.php:699
-#: wp-admin/theme-install.php:290 wp-admin/theme-install.php:310
-msgid "Install"
-msgstr "Instalar"
-
-#: wp-admin/menu.php:206
-msgid "Plugins %s"
-msgstr "Plugins %s"
 
 #: wp-admin/menu.php:248 wp-admin/ms-delete-site.php:30
 msgid "Delete Site"
@@ -6371,7 +6375,7 @@ msgstr "El archivo subido excede la directiva upload_max_filesize en php.ini."
 msgid "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form."
 msgstr "El archivo subido excede la directiva MAX_FILE_SIZE que se especificó en el formulario HTML."
 
-#: wp-admin/credits.php:129
+#: wp-admin/credits.php:128
 msgid "External Libraries"
 msgstr "Bibliotecas externas"
 
@@ -6383,7 +6387,7 @@ msgstr "Herramientas disponibles"
 msgid "Network Setup"
 msgstr "Configuración de la red"
 
-#: wp-admin/credits.php:59
+#: wp-admin/credits.php:65
 msgctxt "Translate this to be the equivalent of English Translators in your language for the credits page Translators section"
 msgid "Translators"
 msgstr "Traductores"
@@ -6404,18 +6408,13 @@ msgstr "WordPress es un software de código libre y abierto, construido por una 
 msgid "All Comments"
 msgstr "Todos los comentarios"
 
-#: wp-admin/about.php:28 wp-admin/credits.php:13 wp-admin/credits.php:29
-#: wp-admin/freedoms.php:28 wp-admin/privacy.php:28
-msgid "Credits"
-msgstr "Créditos"
-
 #: wp-admin/widgets.php:394
 msgctxt "removing-widget"
 msgid "Deactivate"
 msgstr "Desactivar"
 
 #. translators: %s: https://make.wordpress.org/
-#: wp-admin/credits.php:106
+#: wp-admin/credits.php:57
 msgid "Want to see your name in lights on this page? <a href=\"%s\">Get involved in WordPress</a>."
 msgstr "¿Quieres ver tu nombre destacado en esta página? <a href=\"%s\">Involúcrate en WordPress</a>."
 
@@ -6424,21 +6423,26 @@ msgstr "¿Quieres ver tu nombre destacado en esta página? <a href=\"%s\">Invol�
 msgid "WordPress is created by a <a href=\"%1$s\">worldwide team</a> of passionate individuals. <a href=\"%2$s\">Get involved in WordPress</a>."
 msgstr "WordPress está creado por un equipo de <a href=\"%1$s\">personas</a> apasionadas que están alrededor del todo el planeta.<a href=\"%2$s\">Involucrarse en WordPress</a>."
 
-#: wp-admin/credits.php:120
+#: wp-admin/credits.php:119
 msgid "Project Leaders"
 msgstr "Líderes de proyecto"
 
-#: wp-admin/credits.php:123
+#: wp-admin/credits.php:122
 msgid "Cofounder, Project Lead"
 msgstr "Co-fundador, líder de proyecto"
 
-#: wp-admin/credits.php:124
+#: wp-admin/credits.php:123
 msgid "Lead Developer"
 msgstr "Desarrollador principal"
 
-#: wp-admin/credits.php:121
+#: wp-admin/credits.php:120
 msgid "Core Contributors to WordPress %s"
 msgstr "Colaboradores del núcleo de WordPress %s"
+
+#: wp-admin/about.php:28 wp-admin/credits.php:13 wp-admin/credits.php:29
+#: wp-admin/freedoms.php:28 wp-admin/privacy.php:28
+msgid "Credits"
+msgstr "Reconocimientos"
 
 #: wp-admin/includes/dashboard.php:32
 msgid "You are using an insecure browser!"
@@ -9026,13 +9030,13 @@ msgstr "Publicar por correo electrónico"
 msgid "<strong><em>Note that password</em></strong> carefully! It is a <em>random</em> password that was generated just for you."
 msgstr "¡<strong><em>Anota la contraseña</em></strong> cuidadosamente! Es una contraseña <em>aleatoria</em> que ha sido generada solo para ti."
 
-#: wp-admin/options-discussion.php:169
-msgid "When a comment contains any of these words in its content, name, URL, email, or IP address, it will be put in the trash. One word or IP address per line. It will match inside words, so &#8220;press&#8221; will match &#8220;WordPress&#8221;."
-msgstr "Cuando un comentario contiene alguna de las siguientes palabras en su contenido, nombre, URL o IP, se mandará a la papelera. Pon solo una palabra o IP por línea. También afectará las palabras contenidas dentro de otras, como &#8220;press&#8221; que está dentro de &#8220;WordPress&#8221;."
-
 #: wp-admin/options-discussion.php:160
 msgid "When a comment contains any of these words in its content, name, URL, email, or IP address, it will be held in the <a href=\"edit-comments.php?comment_status=moderated\">moderation queue</a>. One word or IP address per line. It will match inside words, so &#8220;press&#8221; will match &#8220;WordPress&#8221;."
 msgstr "Cuando un comentario contiene alguna de estas palabras en su contenido, nombre, URL, correo electrónico o IP se mantendrá en la <a href=\"edit-comments.php?comment_status=moderated\">cola de moderación</a>. Pon una palabra o dirección IP por línea. También afectará a las palabras contenidas dentro de otras, como &#8220;press&#8221;, que está dentro de  &#8220;WordPress&#8221;"
+
+#: wp-admin/options-discussion.php:169
+msgid "When a comment contains any of these words in its content, name, URL, email, or IP address, it will be put in the trash. One word or IP address per line. It will match inside words, so &#8220;press&#8221; will match &#8220;WordPress&#8221;."
+msgstr "Cuando un comentario contiene alguna de las siguientes palabras en su contenido, nombre, URL o IP, se mandará a la papelera. Pon solo una palabra o IP por línea. También afectará las palabras contenidas dentro de otras, como &#8220;press&#8221; que está dentro de &#8220;WordPress&#8221;."
 
 #. translators: %s: web.config
 #: wp-admin/options-permalink.php:322
@@ -10321,20 +10325,17 @@ msgid "Plugin zip file"
 msgstr "Archivo .zip del plugin"
 
 #. translators: %s: Plugin version
-#: wp-admin/includes/plugin-install.php:707
+#: wp-admin/includes/plugin-install.php:715
 msgid "Newer Version (%s) Installed"
 msgstr "Instalada la última versión (%s)"
 
-#: wp-admin/includes/plugin-install.php:710
+#: wp-admin/includes/plugin-install.php:718
 msgid "Latest Version Installed"
 msgstr "Instalada la última versión"
 
-#: wp-admin/includes/plugin-install.php:585
-msgid "Requires WordPress Version:"
-msgstr "Requiere la versión de WordPress:"
-
-#. translators: %s: WordPress version
+#. translators: %s: version number
 #: wp-admin/includes/plugin-install.php:588
+#: wp-admin/includes/plugin-install.php:598
 msgid "%s or higher"
 msgstr "%s o superior"
 
@@ -10342,7 +10343,7 @@ msgstr "%s o superior"
 msgid "Compatible up to:"
 msgstr "Compatible con:"
 
-#: wp-admin/includes/plugin-install.php:673
+#: wp-admin/includes/plugin-install.php:681
 msgid "<strong>Warning:</strong> This plugin has <strong>not been marked as compatible</strong> with your version of WordPress."
 msgstr "<strong>Atención:</strong> Este plugin <strong>no es compatible</strong> con esta versión de WordPress."
 
@@ -10577,11 +10578,11 @@ msgstr "Actualizar ajustes de la galería"
 msgid "Link text, e.g. &#8220;Ransom Demands (PDF)&#8221;"
 msgstr "Texto del enlace, por ejemplo \"Peticiones de rescate (PDF)\""
 
-#: wp-admin/includes/plugin-install.php:702
+#: wp-admin/includes/plugin-install.php:710
 msgid "Install Update Now"
 msgstr "Instalar actualización ahora"
 
-#: wp-admin/includes/plugin-install.php:612
+#: wp-admin/includes/plugin-install.php:620
 msgid "Average Rating"
 msgstr "Puntuación promedio"
 
@@ -10701,7 +10702,7 @@ msgstr "Columnas de la galería"
 msgid "+ Add New Category"
 msgstr "+ Añadir categoría nueva "
 
-#: wp-admin/includes/plugin-install.php:614
+#: wp-admin/includes/plugin-install.php:622
 msgid "(based on %s rating)"
 msgid_plural "(based on %s ratings)"
 msgstr[0] "(basado en %s valoración)"
@@ -10828,7 +10829,7 @@ msgstr "Datos facilitados no válidos."
 msgid "Item updated."
 msgstr "Elemento actualizado."
 
-#: wp-admin/includes/plugin-install.php:604
+#: wp-admin/includes/plugin-install.php:612
 msgid "WordPress.org Plugin Page &#187;"
 msgstr "Página del plugin en WordPress.org &#187;"
 
@@ -10858,7 +10859,7 @@ msgstr "El paquete de instalación no está disponible."
 msgid "Could not fully remove the plugins %s."
 msgstr "No se pudieron eliminar completamente los plugins %s."
 
-#: wp-admin/includes/plugin-install.php:671
+#: wp-admin/includes/plugin-install.php:679
 msgid "<strong>Warning:</strong> This plugin has <strong>not been tested</strong> with your current version of WordPress."
 msgstr "<strong>Advertencia:</strong> Este plugin <strong>no ha sido probado</strong> en tu versión actual de WordPress."
 
@@ -10877,6 +10878,10 @@ msgstr "Ejemplo: <code>https://es.wordpress.org/</code> &#8212;no olvides poner 
 #: wp-admin/includes/file.php:57
 msgid "my-hacks.php (legacy hacks support)"
 msgstr "my-hacks.php (compatibilidad con trucos heredados)"
+
+#: wp-admin/includes/plugin-install.php:585
+msgid "Requires WordPress Version:"
+msgstr "Necesita la versión de WordPress:"
 
 #: wp-admin/includes/ajax-actions.php:1680
 msgid "Someone"
