@@ -7,6 +7,8 @@ textarea {
   letter-spacing: -0.1px;
   color: $black;
   padding: 9px 15px;
+  -webkit-border-radius:0;
+  border-radius:0;
   &::placeholder {
     color: $black;
   }
@@ -17,6 +19,8 @@ input[type=submit], button {
   border: 0;
   position: relative;
   top: 1px;
+  -webkit-border-radius:0;
+  border-radius:0;
 }
 label {
   input[type=checkbox] {
