@@ -1,5 +1,4 @@
 <?php
-
 if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
@@ -173,14 +172,14 @@ acf_add_local_field_group(array(
 ));
 
 acf_add_local_field_group(array(
-	'key' => 'group_5af162b1e647b',
-	'title' => 'Enlace de imagen',
+	'key' => 'group_5af307b23ac12',
+	'title' => 'Links',
 	'fields' => array(
 		array(
-			'key' => 'field_5af162b7b0046',
-			'label' => 'Enlace',
-			'name' => 'image_link',
-			'type' => 'url',
+			'key' => 'field_5af307c11a184',
+			'label' => 'links',
+			'name' => 'links',
+			'type' => 'repeater',
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
@@ -189,16 +188,36 @@ acf_add_local_field_group(array(
 				'class' => '',
 				'id' => '',
 			),
-			'default_value' => '',
-			'placeholder' => '',
+			'collapsed' => '',
+			'min' => 0,
+			'max' => 0,
+			'layout' => 'table',
+			'button_label' => 'Añadir enlace',
+			'sub_fields' => array(
+				array(
+					'key' => 'field_5af307c81a185',
+					'label' => 'Enlace',
+					'name' => 'link',
+					'type' => 'link',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'return_format' => 'array',
+				),
+			),
 		),
 	),
 	'location' => array(
 		array(
 			array(
-				'param' => 'attachment',
+				'param' => 'page_template',
 				'operator' => '==',
-				'value' => 'image',
+				'value' => 'template-hacemos.php',
 			),
 		),
 	),
@@ -1356,25 +1375,6 @@ acf_add_local_field_group(array(
 			'key' => 'field_5addc3289f06d',
 			'label' => 'Alcance total',
 			'name' => 'total_reach',
-			'type' => 'text',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-			'prepend' => '',
-			'append' => '',
-			'maxlength' => '',
-		),
-		array(
-			'key' => 'field_5af160c2a15e2',
-			'label' => 'Texto alcance total',
-			'name' => 'total_reach_text',
 			'type' => 'text',
 			'instructions' => '',
 			'required' => 0,

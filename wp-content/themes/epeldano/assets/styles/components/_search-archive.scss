@@ -9,6 +9,11 @@
   }
   .search-form {
     margin-right: 15px;
+    .search-field {
+      padding-right: 37px;
+      position: relative;
+      background: url('../images/icon-search.svg') no-repeat right 10px center;
+    }
   }
   .style-select {
     min-width: 200px;
