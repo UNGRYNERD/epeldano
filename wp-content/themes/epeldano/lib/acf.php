@@ -232,6 +232,110 @@ acf_add_local_field_group(array(
 ));
 
 acf_add_local_field_group(array(
+	'key' => 'group_5af3136f0f386',
+	'title' => 'Noticia',
+	'fields' => array(
+		array(
+			'key' => 'field_5af3137bc2e9c',
+			'label' => '¿Mostrar imagen destacada en la página de noticia?',
+			'name' => 'show_thumbnail',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => 0,
+			'ui' => 1,
+			'ui_on_text' => '',
+			'ui_off_text' => '',
+		),
+		array(
+			'key' => 'field_5af313a9c2e9d',
+			'label' => '¿La imagen destacada es un logo?',
+			'name' => 'is_logo',
+			'type' => 'true_false',
+			'instructions' => 'Si la imagen es un logo, no se mostrará como fondo en el bloque de la noticia en el listado',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => 0,
+			'ui' => 1,
+			'ui_on_text' => '',
+			'ui_off_text' => '',
+		),
+		array(
+			'key' => 'field_5af3140ec2e9f',
+			'label' => 'Color de fondo',
+			'name' => 'background',
+			'type' => 'color_picker',
+			'instructions' => 'Color de fondo del bloque de la noticia en el listado',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_5af313a9c2e9d',
+						'operator' => '==',
+						'value' => '1',
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+		),
+		array(
+			'key' => 'field_5af313eec2e9e',
+			'label' => '¿Texto negro?',
+			'name' => 'black',
+			'type' => 'true_false',
+			'instructions' => 'Por defecto el texto es blanco en el bloque de la noticia en el listado',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => 0,
+			'ui' => 1,
+			'ui_on_text' => '',
+			'ui_off_text' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'post',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => 1,
+	'description' => '',
+));
+
+acf_add_local_field_group(array(
 	'key' => 'group_5ad7100364d44',
 	'title' => 'Página basada en bloques',
 	'fields' => array(

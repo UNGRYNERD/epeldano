@@ -2,6 +2,11 @@
   max-width: $container-px;
   padding: 0 15px;
   margin: 45px auto 83px auto;
+  &__image {
+    display: block;
+    width: 100%;
+    margin: 20px 0 45px 0;
+  }
   &__title {
     font-size: rem(40px);
     font-weight: bold;

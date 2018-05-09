@@ -24,9 +24,9 @@
   ]); ?>
 <?php else : ?>
   <article class="s-post">
-    <h2 class="s-post__title">No hay resultados para tu búsqueda</h2>
+    <h2 class="s-post__title"><?php esc_html_e('No hay resultados para tu búsqueda', 'ungrynerd'); ?></h2>
     <div class="s-post__content">
-      Prueba con otros términos de búsqueda o navega por el menú de la página.
+      <?php esc_html_e('Prueba con otros términos de búsqueda o navega por el menú de la página.', 'ungrynerd'); ?>
     </div>
   </article>
 <?php endif; ?>

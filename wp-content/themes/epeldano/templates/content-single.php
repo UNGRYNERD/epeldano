@@ -1,5 +1,8 @@
 <?php get_template_part('templates/search-archive'); ?>
 <?php while (have_posts()) : the_post(); ?>
+  <?php if (get_field('show_thumbnail')) : ?>
+    <?php the_post_thumbnail('ungrynerd_big', array('class' => 's-post__image')); ?>
+  <?php endif; ?>
   <article <?php post_class('s-post'); ?>>
     <header>
       <h1 class="s-post__title"><?php the_title(); ?></h1>

@@ -38,9 +38,6 @@ function setup() {
   add_image_size('ungrynerd_pagelink', 960, 680, true);
   add_image_size('ungrynerd_member', 360, 400, true);
   add_image_size('ungrynerd_member_big', 720, 400, true);
-  // Enable post formats
-  // http://codex.wordpress.org/Post_Formats
-  add_theme_support('post-formats', ['aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio']);
 
   // Enable HTML5 markup support
   // http://codex.wordpress.org/Function_Reference/add_theme_support#HTML5
