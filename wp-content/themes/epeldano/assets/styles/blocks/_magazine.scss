@@ -15,7 +15,7 @@
     margin: 0 0 36px 0;
     word-break: break-word;
     @media (max-width: $md) {
-      font-size: rem(25px);
+      font-size: rem(27px);
       margin-bottom: 15px;
     }
     &:before {
@@ -105,7 +105,7 @@
     position: relative;
     word-break: break-word;
     @media (max-width: $md) {
-      font-size: rem(25px);
+      font-size: rem(27px);
       padding: 15px;
       width: 100%;
     }
@@ -167,9 +167,11 @@
     max-width: 20%;
     position: relative;
     @media (max-width: $md) {
-      flex: 0 0 100%;
+      flex: 0 0 auto;
       max-width: 100%;
-      margin-bottom: 30px;
+      max-height: 50vh;
+      width: auto;
+      margin: 0 auto 30px auto;
     }
   }
 }

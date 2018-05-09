@@ -22,7 +22,7 @@
     text-align: left;
     color: $primary;
     @media (max-width: $md) {
-      font-size: rem(25px);
+      font-size: rem(27px);
     }
   }
   &__content {
@@ -81,8 +81,7 @@
     @media (max-width: $md) {
       position: relative;
       max-width: 80%;
-      left: 50%;
-      transform: translateX(-50%);
+      left: 20%;
     }
   }
 }
