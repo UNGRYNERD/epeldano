@@ -51,3 +51,4 @@ npm-debug.log
 sftp-config.json
 Movefile
 movefile.yml
+wp-content/wflogs/config.php
