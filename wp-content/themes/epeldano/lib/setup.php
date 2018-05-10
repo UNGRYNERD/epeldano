@@ -96,7 +96,13 @@ function assets() {
   }
 
   wp_register_script('ungrynerd/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
-  $ungrynerd = array('path' => get_stylesheet_directory_uri());
+  global $wp_query;
+  $ungrynerd = array(
+    'path' => get_stylesheet_directory_uri(),
+    'url'  => admin_url( 'admin-ajax.php'),
+    'ppp'  => 3,
+    'query' => $wp_query->query
+  );
   wp_localize_script('ungrynerd/js', 'ungrynerd', $ungrynerd);
   wp_enqueue_script('ungrynerd/js');
 }

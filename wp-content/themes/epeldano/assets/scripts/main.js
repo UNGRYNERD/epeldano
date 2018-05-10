@@ -188,7 +188,38 @@
         });
 
       } //end map
+    },
+    setupAJAXPagination: function () {
+      //Posts ajax pagination
+      var $grid = $('.news');
+      $('.news__more').on('click', function (event) {
+        event.preventDefault();
+        var ppp = ungrynerd.ppp; //posts per page
+        var $more = $(this);
+        $.ajax({
+          url: ungrynerd.url,
+          type: 'POST',
+          dataType: 'html',
+          data: {
+            'action': 'ungrynerd_more',
+            'paged': Math.ceil(($('.news .post-block').length - 4 / ppp) + 1),
+            'query': ungrynerd.query,
+          },
+          success: function (data) {
+            if (data.length) {
+              var $data = $(data);
+              $grid.append($data);
 
+              //Disable more posts button if .no-more comes in the ajax response
+              if ($('.no-more').length) {
+                $more.addClass('disabled');
+              }
+            } else {
+              $more.addClass('disabled');
+            }
+          }
+        });
+      });
     }
   };
   // Use this variable to set up the common and page specific functions. If you
@@ -218,9 +249,10 @@
       }
     },
     // About us page, note the change from about-us to about_us.
-    'about_us': {
+    'blog': {
       init: function() {
         // JavaScript to be fired on the about us page
+        Peldano.setupAJAXPagination();
       }
     }
   };
