@@ -1,5 +1,9 @@
 .ed-intro {
   padding: 140px 0 120px 0;
+  @media (max-width: $md) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
   &__wrapper {
     color: $white;
     max-width: 100%;
@@ -15,6 +19,9 @@
     letter-spacing: -0.4px;
     color: $primary;
     margin: 0 0 20px 0;
+    @media (max-width: $md) {
+      font-size: rem(35px);
+    }
   }
 }
 .ed-counter {
@@ -25,11 +32,18 @@
   font-weight: 600;
   line-height: 1.17;
   text-align: center;
+  @media (max-width: $md) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
   &__number {
     display: block;
     font-size: rem(130px);
     font-weight: 200;
     line-height: 1.3;
+    @media (max-width: $md) {
+      font-size: rem(45px);
+    }
   }
 }
 .ed-block {
@@ -45,6 +59,9 @@
     letter-spacing: -0.3px;
     color: $white;
     margin: 0 0 30px 0;
+    @media (max-width: $md) {
+      font-size: rem(35px);
+    }
   }
   &__counter {
     font-size: 20px;
@@ -90,28 +107,71 @@
       max-height: 580px;
       flex: 0 0 40%;
       max-width: 40%;
+      @media (max-width: $container-full-px) {
+        padding-left: 15px;
+      }
+      @media (max-width: $md) {
+        justify-content: flex-start;
+        padding-right: 30px;
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+      @media (max-width: $sm) {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+    .ed-block__counter {
+      @media (max-width: $md) {
+        max-width: 280px;
+      }
     }
     .ed-block__image {
       order: 2;
       flex: 0 0 60%;
       max-width: 60%;
+      @media (max-width: $md) {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+      @media (max-width: $sm) {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
     }
     .ed-block__wrap {
       max-width: 320px;
+      @media (max-width: $sm) {
+        max-width: 100%;
+      }
     }
   }
   &--two {
     padding: 60px 0 30px 0;
+    @media (max-width: $md) {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
     .ed-block__title {
       color: $primary;
     }
     .ed-block__counter {
       color: $primary;
       border-color: $primary;
+      @media (max-width: $md) {
+        max-width: 280px;
+      }
     }
     .ed-block__wrapper {
       order: 1;
       padding-right: 100px;
+      @media (max-width: $md) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0;
+        margin-bottom: 30px;
+      }
     }
     .ed-block__image {
       order: 2;
@@ -119,6 +179,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      @media (max-width: $md) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0px 50px;
+      }
     }
 
   }
@@ -126,6 +191,10 @@
     background: $primary;
     padding: 60px 0 30px 0;
     color: $white;
+    @media (max-width: $md) {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
     .ed-block__title {
       color: $black;
     }
@@ -135,6 +204,12 @@
     .ed-block__wrapper {
       max-width: 60%;
       flex: 0 0 60%;
+      @media (max-width: $md) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0;
+        margin-bottom: 30px;
+      }
     }
     .ed-block__image {
       padding-right: 100px;
@@ -143,6 +218,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      @media (max-width: $md) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0 50px;
+        margin-bottom: 30px;
+      }
     }
   }
 }
@@ -155,6 +236,10 @@
   font-size: rem(16px);
   line-height: 1.19;
   letter-spacing: -0.3px;
+  @media (max-width: $md) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
   &__title {
     margin: 0 0 29px 0;
     font-size: rem(65px);
@@ -162,5 +247,8 @@
     line-height: 1.02;
     letter-spacing: -0.3px;
     color: $primary;
+    @media (max-width: $md) {
+      font-size: rem(35px);
+    }
   }
 }
