@@ -34,6 +34,15 @@ add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
 
 
 /**
+ * Limit words the_excerpt()
+ */
+function ungrynerd_excerpt_length( $length ) {
+  return 11;
+}
+add_filter( 'excerpt_length', __NAMESPACE__ . '\\ungrynerd_excerpt_length', 999 );
+
+
+/**
  * inline svg helper
  */
 function inline_svg($svg) {
